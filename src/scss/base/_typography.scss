@@ -1,0 +1,90 @@
+@include font-face("Vezla", "Vezla-Regular", 400);
+@include font-face("Tenor Snas", "TenorSans-Regular", 400);
+@include font-face("Benzin", "Benzin-Regular", 400);
+@include font-face("Benzin", "Benzin-Medium", 500);
+@include font-face("GeneralSans", "GeneralSans-Regular", 400);
+@include font-face("NotoSans", "NotoSans-Regular", 400);
+
+.title {
+  // margin-bottom: 30px;
+  @include font(Gilroy, 500, sans-serif);
+  line-height: 1.25em;
+  font-size: resp(45);
+  color: $primary;
+  @include _767 {
+    font-size: resp(24, 360);
+  }
+}
+
+.page-title {
+  padding-bottom: resp(30);
+  font-weight: 600;
+  font-size: resp(48);
+  line-height: 1.3em;
+  letter-spacing: 0.05em;
+  color: #000;
+  @include _767 {
+    padding-bottom: resp(15, 360);
+    font-size: resp(24, 360);
+  }
+}
+
+.blue-title {
+  margin-bottom: resp(30);
+  padding: resp(20) 0;
+  font-size: resp(40);
+  line-height: 1.3em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #fff;
+  &.center {
+    text-align: center;
+  }
+  &-wrap {
+    background-color: $primary;
+  }
+  @include _767 {
+    margin-bottom: resp(15, 360);
+    padding: resp(9, 360);
+    font-size: resp(20, 360);
+  }
+}
+
+.weight-regular {
+  font-weight: 400;
+}
+.weight-medium {
+  font-weight: 500;
+}
+.weight-semibold {
+  font-weight: 600;
+}
+.weight-bold {
+  font-weight: 700;
+}
+
+// .section-title {
+//   color: $primary;
+//   @include _767 {
+//     font-size: 24px;
+//     & .title-accent {
+//       font-size: 24px;
+//     }
+//   }
+// }
+
+// .section-subtitle {
+//   @extend .section-title;
+//   margin-bottom: 0;
+//   font-size: 20px;
+//   @include _767 {
+//     font-size: 16px;
+//   }
+// }
+
+// .section-title-wrap {
+//   margin-bottom: 50px;
+//   @include _992 {
+//     margin-bottom: 30px;
+//   }
+// }
