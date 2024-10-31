@@ -1,7 +1,7 @@
 .section {
-  padding-bottom: resp(100);
+  padding-bottom: resp(50);
   @include _767 {
-    padding-bottom: resp(70, 360);
+    padding-bottom: resp(50, 360);
   }
   // &-top .container {
   //   padding-left: resp-size(176);
@@ -17,18 +17,6 @@
   // }
   &-title-wrap {
     position: relative;
-  }
-  &-title {
-    margin-bottom: resp-size(30);
-    font-size: resp-size(48);
-    line-height: 1.4em;
-    &.center {
-      text-align: center;
-    }
-    @include _767 {
-      margin-bottom: resp-size(20, 363);
-      font-size: resp-size(24, 363);
-    }
   }
   // &:last-child {
   //   padding-bottom: resp-size(44);

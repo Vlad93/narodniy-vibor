@@ -27,6 +27,16 @@
   }
 }
 
+
+@keyframes marquee {
+  0% {
+      transform: translate(0, 0); /* Начальная позиция */
+  }
+  100% {
+      transform: translate(-100%, 0); /* Конечная позиция */
+  }
+}
+
 @keyframes spWaveBe {
   from {
     transform: scale(1, 1);

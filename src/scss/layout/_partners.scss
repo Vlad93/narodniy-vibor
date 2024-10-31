@@ -4,9 +4,7 @@
   }
   &__title {
     margin-bottom: resp(50);
-    color: #000;
-    font-weight: 600;
-    line-height: 1.3em;
+    line-height: 1.2em;
     @include _767 {
       margin-bottom: resp(20, 360);
     }
@@ -24,10 +22,10 @@
 }
 .section-partners__swiper-slide img {
   width: 100%;
-  height: resp(227);
-  object-fit: contain;
+  height: resp(150);
   object-position: center;
+  // object-fit: contain;
   @include _767 {
-    height: resp(84, 360);
+    height: resp(54, 360);
   }
 }

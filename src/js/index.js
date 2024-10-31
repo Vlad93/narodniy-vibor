@@ -999,78 +999,17 @@ $(document).ready(function () {
         },
       });
   });
-  $('[productsSlider_js]').each(function () {
-    const navigationPrev = $(this).parents('.section-products-swiper').find('.swiper__navigation-btn-prev')[0];
-    const navigationNext = $(this).parents('.section-products-swiper').find('.swiper__navigation-btn-next')[0];
+  $('[newsSlider_js]').each(function () {
     var swiper = new Swiper($(this)[0], {
       direction: 'horizontal',
-      slidesPerView: 2,
-      spaceBetween: 10,
-      speed: 700,
-      scrollbar: {
-        enabled: true,
-        el: ".swiper-scrollbar",
-        draggable: true,
-        hide: false,
-      },
-      navigation: {
-        nextEl: navigationNext,
-        prevEl: navigationPrev,
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-          scrollbar: {
-            enabled: true,
-          },
-        },
-        767: {
-          slidesPerView: 4,
-          spaceBetween: 20,
-          scrollbar: {
-            enabled: false,
-          },
-        },
-        992: {
-          slidesPerView: 5,
-          spaceBetween: 20,
-          scrollbar: {
-            enabled: false,
-          },
-        },
-      }
-    });
-  });
-  $('[lastSizeSlider_js]').each(function () {
-    var swiper = new Swiper($(this)[0], {
-      direction: 'horizontal',
-      slidesPerView: 1,
-      spaceBetween: 10,
+      slidesPerView: 1.7,
+      spaceBetween: 17,
       speed: 700,
       scrollbar: {
         enable: true,
-        el: ".swiper-scroll",
+        el: ".swiper-scrollbar",
         draggable: true,
         hide: false,
-      },
-      navigation: {
-        nextEl: '.section-last-size__swiper-navigation .swiper__navigation-btn-next',
-        prevEl: '.section-last-size__swiper-navigation .swiper__navigation-btn-prev',
-      },
-      breakpoints: {
-        0: {
-          scrollbar: {
-            enabled: true,
-          },
-        },
-        767: {
-          slidesPerView: 3,
-          spaceBetween: 18,
-          scrollbar: {
-            enabled: false,
-          },
-        },
       },
     });
   });
@@ -1152,10 +1091,10 @@ $(document).ready(function () {
       },
     })
   });
-  $('[sertificateSlider_js]').each(function () {
+  $('[categoriesSlider_js]').each(function () {
     var swiper = new Swiper($(this)[0], {
       direction: 'horizontal',
-      slidesPerView: 1,
+      slidesPerView: 2.2,
       spaceBetween: 64,
       speed: 700,
       scrollbar: {
@@ -1169,7 +1108,7 @@ $(document).ready(function () {
       // },
       breakpoints: {
         0: {
-          slidesPerView: 1,
+          slidesPerView: 2.2,
           spaceBetween: 10,
           scrollbar: {
             enabled: true,
@@ -1177,27 +1116,19 @@ $(document).ready(function () {
         },
         767: {
           freeMode: true,
-          slidesPerView: 'auto',
-          spaceBetween: 30,
+          slidesPerView: 4.5,
+          spaceBetween: 20,
           scrollbar: {
             enabled: false,
           },
         },
-        1200: {
-          freeMode: true,
-          slidesPerView: 'auto',
-          spaceBetween: 64,
-          scrollbar: {
-            enabled: false,
-          },
-        }
       },
     });
   });
 
   var swiperMarque = new Swiper('.section-partners__swiper', {
     slidesPerView: 3,
-    spaceBetween: 0,
+    spaceBetween: 20,
     speed: 4500,
     loop: true,
     allowTouchMove: false, // можно ещё отключить свайп
@@ -1207,42 +1138,13 @@ $(document).ready(function () {
     },
     breakpoints: {
       992: {
-        slidesPerView: 5,
-        spaceBetween: 5,
+        slidesPerView: 4,
+        spaceBetween: 50,
       }
     }
   });
 
-  // dooors swipers
-  function doorsSwiperInit(el, isReverse = false, speed = 6500, initialSlide = 0) {
-    var swiper = new Swiper(el, {
-        direction: 'vertical',
-        slidesPerView: 1.4,
-        spaceBetween: 30,
-        speed: speed,
-        initialSlide: initialSlide,
-        loop: true,
-        allowTouchMove: false, // можно ещё отключить свайп
-        autoplay: {
-          delay: 0,
-          reverseDirection: isReverse,
-          disableOnInteraction: false // или сделать так, чтобы восстанавливался autoplay после взаимодействия
-        },
-        // breakpoints: {
-        //   767: {
 
-        //   }
-        // }
-    });
-  }
-  var doorsSwiperEl1 = $('.section-doors__swiper_1');
-  var doorsSwiperEl2 = $('.section-doors__swiper_2');
-  var doorsSwiperEl3 = $('.section-doors__swiper_3');
-  var doorsSwiperEl4 = $('.section-doors__swiper_4');
-  doorsSwiperInit(doorsSwiperEl1[0]);
-  doorsSwiperInit(doorsSwiperEl2[0], true, 8500);
-  doorsSwiperInit(doorsSwiperEl3[0], false, 4800);
-  doorsSwiperInit(doorsSwiperEl4[0], true, 6200);
 
   const gallary__swiper = new Swiper('.gallary__swiper', {
     slidesPerView: 4,
@@ -1412,18 +1314,18 @@ $(document).ready(function () {
     });
 
     $('[headerBtn_JS]').on('click', function () {
-      menuOpen();
-    });
-
-    $('.header__mob-btn-close').on('click', function () {
-      menuClose();
-    });
-
-	$('.header__mob-content a').on('click', function () {
-    if ($('[headerBtn_JS]').hasClass('open')) {
-      menuClose();
-		}
+      if ($(this).hasClass('active')) {
+        menuClose();
+      } else {
+        menuOpen();
+      }
   });
+
+$('.header__nav a').on('click', function () {
+  if ($('[headerBtn_JS]').hasClass('open')) {
+    menuClose();
+  }
+});
 
   function slideToggleSection() {
     $('[toggleItem_JS]').each(function() {
@@ -1542,23 +1444,16 @@ $(document).ready(function () {
 
 function menuOpen() {
     $('[headerBtn_JS]').addClass('active');
-    $('[headerBtn_JS]').closest('header').find('.header__mob-content').addClass('open');
+    $('[headerBtn_JS]').closest('header').find('.header__bottom').addClass('open');
     $('html').css('overflow', 'hidden');
 }
 
 function menuClose() {
-    // $('html').removeAttr('style');
     $('[headerBtn_JS]').removeClass('active');
-    $('[headerBtn_JS]').closest('header').find('.header__mob-content').removeClass('open');
+    $('[headerBtn_JS]').closest('header').find('.header__bottom').removeClass('open');
     $('html').removeAttr('style');
 }
 
-$('.header__catalog-btn').on('click', (e) => {
-  $('.header__catalog-nav-wrap').toggleClass('open');
-});
-$('.header__catalog-btn-close').on('click', (e) => {
-  $('.header__catalog-nav-wrap').removeClass('open');
-});
 
 
 
@@ -1673,13 +1568,13 @@ var popupOpen = function (e) {
 
 function fixedHeader() {
   var height = jQuery(window).scrollTop();
-  var headerHeight = $('.header__top').innerHeight() + $('.header__bottom').innerHeight() + 50;
-	if ( height > 50 ) {
+  var headerHeight = $('.header').innerHeight();
+	if ( height >= headerHeight) {
     jQuery('.header').addClass('fixed');
-    $('body').css('padding-top', headerHeight);
+    // $('body').css('padding-top', $('.header').innerHeight());
   } else {
     jQuery('.header').removeClass('fixed');
-    $('body').css('padding-top', '0');
+    // $('body').css('padding-top', '0');
   }
 }
 
@@ -1690,6 +1585,8 @@ jQuery(window).scroll(function($) {
 $(window).on('resize', function() {
   fixedHeader();
 });
+
+
 
 $(window).on('scroll', function() {
   var ratio = $(document).scrollTop() / (($(document).height() - $(window).height()) / 100);
@@ -1714,10 +1611,21 @@ $(window).scroll(function () {
 
 });
 
-$('img').each( function(e) {
-  $(this).addClass('lazy');
+$('.header__search-open').on('click', function(e) {
+  e.preventDefault();
+  $(this).parents('.search-form').toggleClass('open');
 });
-let lazyLoadInstance = new LazyLoad();
+$('.header__search-close-btn').on('click', function(e) {
+  e.preventDefault();
+  $(this).parents('.search-form').removeClass('open');
+  $(this).parents('.search-form').find('input').val('');
+});
+
+
+// $('img').each( function(e) {
+//   $(this).addClass('lazy');
+// });
+// let lazyLoadInstance = new LazyLoad();
 
 
 

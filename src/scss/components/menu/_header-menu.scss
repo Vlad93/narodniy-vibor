@@ -8,13 +8,9 @@
     column-gap: resp(5);
     justify-content: space-between;
     @include _767 {
+      justify-content: center;
       width: 100%;
-      column-gap: resp(12, 360);
-    }
-  }
-  &__item {
-    @include _767 {
-      width: 100%;
+      column-gap: resp(8, 360);
     }
   }
   &__link {
@@ -22,16 +18,17 @@
     display: inline-block;
     font-size: resp(20);
     line-height: 1.4em;
-    font-weight: 600;
-    color: #fff;
+    background: $primary;
+    -webkit-background-clip: text; /* Обрезка фона по тексту */
+    color: transparent;
+    @include font(Tenor Sans, 400, sans-serif);
     transform-origin: 50% 50%;
+    text-transform: uppercase;
     transition: transform .3s ease, color .3s ease;
-    // @include _1200 {
-    //   font-size: 16px;
-    // }
     @include _767 {
-      padding: resp(4, 360) 0;
-      font-size: resp(16, 360);
+      @include font(Benzin, 500, sans-serif);
+      padding: resp(7, 360) 0;
+      font-size: resp(20, 360);
     }
     &::after {
       content: '';
@@ -40,9 +37,9 @@
       width: 100%;
       height: 1px;
       background-color: #fff;
-      top: 98%;
+      top: 99%;
       left: 0;
-      transform-origin: 50%;
+      transform-origin: 0%;
       transform: scale(0);
       transition: transform .3s ease;
       @include _767 {
@@ -70,34 +67,25 @@
     outline: none;
     background-color: transparent;
     @include _767 {
+      flex: none;
+      justify-content: center;
       width: resp(24, 363);
       height: resp(24, 363);
     }
     &-icon {
       width: resp(16);
-      height: resp(8);
-      fill: #fff;
+      height: auto;
+      fill: #EDB261;
+      stroke: #EDB261;
       transition: transform .3s ease, fill .3s ease;
       @include _767 {
-        width: resp(16, 360);
-        height: resp(8, 360);
+        width: resp(15, 360);
+        height: resp(11, 360);
       }
-    }
-  }
-  &__item.is-active  &__link {
-    color: $white;
-    @include _992 {
-      color: $white;
     }
   }
   &__item.is-active &__dropdown-btn-icon {
     transform: rotate(180deg);
-    // & path {
-    //   stroke: #1642AA;
-    //   @include _992 {
-    //     stroke: $primary;
-    //   }
-    // }
   }
 }
 

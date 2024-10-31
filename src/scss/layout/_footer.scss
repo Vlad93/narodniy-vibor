@@ -1,35 +1,32 @@
 .footer {
-  padding: resp(35) 0 resp(20);
+  padding: resp(51) 0 resp(45);
   background-color: #000;
   color: #fff;
   @include _767 {
-    padding: resp(18, 360) 0 resp(15, 360);
+    padding: resp(16, 360) 0 resp(9, 360);
   }
   &__content-wrap {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    @include _992 {
-      flex-wrap: wrap;
-    }
+    gap: resp(64);
     @include _767 {
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
-      gap: resp(30, 360);
+      gap: resp(25, 360);
     }
   }
   &__main-info {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: resp(38);
+    @include font(General Sans, 400, sans-serif);
+    line-height: 1.3em;
+    font-size: resp(16);
+    gap: resp(15);
     @include _767 {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: flex-start;
-      gap: resp(30, 363);
+      font-size: resp(12, 360);
+      gap: resp(10, 363);
     }
   }
   &__about {
@@ -61,128 +58,157 @@
     }
   }
   &__logo {
-    width: resp(417);
-    @include _767 {
-      width: resp(167, 360);
-    }
-  }
-  &__phone-wrap {
-    margin-bottom: 18px;
-    & .phone__working-time {
-      letter-spacing: 0.3px;
-      &::before {
-        display: none;
-      }
-    }
-  }
-  &__catalog-nav-wrap {
+    width: resp(190);
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: resp(20);
-    @include _767 {
-
-    }
-  }
-  &__catalog-nav-link {
-    font-weight: 400;
-    font-size: resp(16);
-  }
-  &__created {
-    margin-top: resp(30);
-    margin-left: auto;
-    @include _767 {
-      margin-top: 0;
-      margin: 0 auto;
-    }
-    &-link {
-      display: block;
-      width: resp(167);
-      height: auto;
-      & img {
-        width: 100%;
-      }
-      @include _1200 {
-        width: 147px;
-      }
-      @include _767 {
-        width: resp(147, 360);
-      }
-    }
-  }
-  &__bottom {
-    padding-top: resp(64);
-    @include _767 {
-      padding-top: resp(20, 360);
-    }
-    &-copyrights {
-      text-align: center;
-      font-weight: 600;
-      font-size: resp(20);
-      line-height: 1.3em;
-      @include _992 {
-        font-size: 14px;
-      }
-      @include _767 {
-        display: block;
-        font-size: resp(14, 360);
-      }
-    }
-  }
-  &__dop-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: resp(20);
-    @include _767 {
+    align-items: center;
+    justify-content: center;
+    &-img {
       width: 100%;
+      height: auto;
+    }
+    @include _767 {
+      width: resp(77, 360);
+    }
+  }
+  &__phones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: resp(10);
+    @include _767 {
       gap: resp(10, 360);
     }
-  }
-  &__phone {
-    @include interactive {
-      &:hover {
-        color: #537BD5;
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: resp(7);
+      &-text {
+        font-weight: 700;
       }
     }
+  }
+  &__phones-link, &__email {
+    line-height: 1.3em;
+    transition: color .3s ease;
+    @include interactive {
+      &:hover {
+        color: #fdd69d;
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: auto;
+    margin-left: auto;
+    text-align: right;
     @include _767 {
+      margin: 0;
+      text-align: left;
+    }
+    &-copyrights {
+      margin-bottom: resp(15);
+      @include font(General Sans, 400, sans-serif);
+      font-size: resp(20);
+      line-height: 1.3em;
+      background: $primary;
+      -webkit-background-clip: text; /* Обрезка фона по тексту */
+      color: transparent;
+      transition: text-shadow .3s ease;
+      @include _767 {
+        margin-bottom: resp(6, 360);
+        display: block;
+        font-size: resp(10, 360);
+      }
+    }
+  }
+  &-privacy__list {
+    display: flex;
+    align-items: center;
+    @include font(General Sans, 400, sans-serif);
+    font-size: resp(20);
+    @include _767 {
+      flex-wrap: wrap;
       gap: resp(5, 360);
-      font-size: resp(20, 360);
-      & .phone-link__icon {
-        width: resp(39, 360);
-        height: resp(39, 360);
+      font-size: resp(10, 360);
+    }
+    &-item:not(:last-child) &-link::after {
+      content: '';
+      display: block;
+      width: resp(1);
+      height: calc(100% + 4px);
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: $primary;
+    }
+    &-link {
+      position: relative;
+      padding: 0 resp(10);
+      background: $primary;
+      font-size: resp(20);
+      @include font(Noto Sans, 400, sans-serif);
+      -webkit-background-clip: text; /* Обрезка фона по тексту */
+      color: transparent;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: #fdd69d;
+      transition: text-shadow .3s ease;
+      @include _767 {
+        line-height: 1.3em;
+        font-size: resp(10, 360);
+      }
+      @include interactive {
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: #fdd69d;
+          text-shadow: 0 0 calc((15 / 1920)* 100vw) #fff0da;
+        }
       }
     }
   }
-  &__btn {
-    border: 1px solid #fff;
-    @include interactive {
-      &:hover {
-        box-shadow: 3px 7px 8px 0px #537BD5;
-      }
-    }
+
+  &__logo-contacts {
+    padding-top: resp(10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: resp(60);
     @include _767 {
-      max-width: resp(273, 360);
-      width: 100%;
-      margin-bottom: resp(20, 360);
+      padding-top: 0;
+      margin: 0 auto;
+      gap: resp(15, 360);
     }
+  }
+  &__nav-wrap {
+    margin-bottom: resp(85);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: resp(88);
+    @include _767 {
+      flex-direction: column;
+      align-items: center;
+      gap: resp(15, 360);
+    }
+  }
+  &__content-container {
+    transform: none;
   }
 }
 
 .footer-nav  {
   position: relative;
+  flex: 1;
   &__list {
     display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: resp(18);
+    align-items: center;
+    justify-content: space-between;
     @include _767 {
       width: 100%;
       margin: 0 auto;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-start;
+      align-items: center;
       gap: resp(1, 363);
     }
   }

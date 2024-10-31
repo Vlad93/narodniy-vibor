@@ -1,16 +1,15 @@
 .submenu {
   padding: resp(20);
   position: absolute;
-  top: 98%;
+  top: 100%;
   width: max-content;
-  z-index: 1;
+  border-radius: resp(7);
+  z-index: 2;
   background-color: #000;
   transform-origin: 0 0;
   transition: opacity .4s ease, visibility .3s ease, transform .3s ease;
   @include _992 {
-    padding-left: resp(15, 360);
     position: static;
-    flex-basis: 100%;
     border-radius: 0;
     opacity: 1;
     visibility: visible;
@@ -18,8 +17,7 @@
     display: none;
   }
   @include _767 {
-    width: 100%;
-    padding-left: resp(28, 363);
+    text-align: center;
     background: transparent;
   }
   &:where(:not(.is-active)) {
@@ -31,18 +29,15 @@
       visibility: visible;
     }
   }
-  &__item:not(:last-of-type) &__link {
-    @include _767 {
-      border-bottom: 1px solid #fff;
-    }
-  }
   &__link {
     position: relative;
-    width: 100%;
     display: inline-block;
     padding: resp(10) 0;
+    @include font(Tenor Sans, 400, sans-serif);
     font-size: resp(18);
-    color: $white;
+    background: $primary;
+    -webkit-background-clip: text; /* Обрезка фона по тексту */
+    color: transparent;
     line-height: 1.3em;
     outline: none;
     transition: transform .3s ease;
@@ -55,7 +50,7 @@
       background-color: #fff;
       top: 85%;
       left: 0;
-      transform-origin: 50%;
+      transform-origin: 0%;
       transform: scale(0);
       transition: transform .3s ease;
       @include _767 {
@@ -73,8 +68,8 @@
     }
     @include _767 {
       line-height: 1.35em;
-      padding: resp(5, 360) 0;
-      font-size: resp(14, 360);
+      padding: resp(7, 360) 0;
+      font-size: resp(15, 360);
     }
   }
 }

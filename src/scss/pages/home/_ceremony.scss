@@ -1,0 +1,147 @@
+.section-ceremony {
+  background: url('../img/ceremony-grad.webp') no-repeat center / cover;
+  @include _767 {
+    background: none;
+  }
+  &__title {
+    @include _767 {
+      text-align: center;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: resp(48);
+    @include _767 {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      gap: resp(20, 360);
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+  }
+  &__foundation {
+    &.section-ceremony__item {
+      align-items: center;
+      text-align: center;
+    }
+    width: resp(415);
+    transform: translateY(resp(-223));
+    @include _767 {
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      gap: resp(8, 360);
+      margin-top: resp(-40, 360);
+      transform: none;
+    }
+    &-img-wrap {
+      height: resp(467);
+      @include _767 {
+        width: 50%;
+        flex: 1;
+        height: auto;
+      }
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    &-text {
+      font-size: resp(32);
+      @include _767 {
+        flex: 1;
+        font-size: resp(12, 360);
+        line-height: 1.3em;
+        text-align: left;
+      }
+    }
+  }
+  &__img-top-wrap {
+    display: flex;
+    align-items: center;
+    padding: 0 resp(130);
+    @include _767 {
+      padding: 0;
+    }
+  }
+  &__img-bottom-wrap {
+    width: resp(542);
+    height: resp(379);
+    @include _767 {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__img-bottom {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__about {
+    padding-top: resp(10);
+    flex: 1;
+    margin-left: resp(30);
+    @include _767 {
+      padding-top: 0;
+      margin-left: 0;
+    }
+    &-text {
+      line-height: 1.3em;
+      font-size: resp(28);
+      margin-bottom: resp(21);
+      display: -webkit-box;          /* Используем флекс-контейнер для обрезки */
+      -webkit-box-orient: vertical; /* Устанавливаем вертикальную ориентацию */
+      -webkit-line-clamp: 5;        /* Ограничиваем до 5 строк */
+      overflow: hidden;             /* Скрываем переполнение */
+      text-overflow: ellipsis;
+      @include _767 {
+        margin-bottom: resp(5, 360);
+       font-size: resp(12, 360);
+       line-height: 1.6em;
+      }
+    }
+    &-link {
+      width: 100%;
+      margin-bottom: resp(40);
+      background: $primary;
+      -webkit-background-clip: text; /* Обрезка фона по тексту */
+      color: transparent;
+      @include font(Noto Snas, 400, sans-serif);
+      line-height: 1.3em;
+      @include _767 {
+        margin-bottom: resp(20, 360);
+        font-size: resp(12, 360);
+        line-height: 1.3em;
+      }
+      &-icon {
+        display: inline-block;
+        transition: padding .3s ease;
+      }
+      @include interactive {
+        &:hover &-icon {
+          padding-left: 5px;
+        }
+      }
+    }
+    &-btn {
+      width: 100%;
+      padding: resp(24) resp(60);
+      font-size: resp(32);
+      @include _767 {
+        padding: resp(13, 360) resp(20, 360);
+        text-align: center;
+        width: 100%;
+        font-size: resp(20, 360);
+      }
+    }
+  }
+}

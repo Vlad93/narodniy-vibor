@@ -1,0 +1,103 @@
+.section-categories {
+  padding-bottom: resp(100);
+  @include _767 {
+    padding-bottom: resp(50, 360);
+  }
+  background: url('../img/grad-bg.webp') no-repeat left bottom / 40%;
+  &__marquee {
+    margin-bottom: resp(20);
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    @include _767 {
+      margin-bottom: resp(20, 360);
+    }
+  }
+  &__marquee-text {
+    font-size: resp(170);
+    display: inline-block;
+    padding-left: 100%; /* Начальная позиция текста */
+    animation: marquee 12s linear infinite; /* Анимация */
+    @include _767 {
+      font-size: resp(36, 360);
+    }
+  }
+  &__btn {
+    margin-left: auto;
+    padding: resp(24) resp(60);
+    font-size: resp(32);
+    @include _767 {
+      padding: resp(13, 360) resp(20, 360);
+      text-align: center;
+      width: 100%;
+      font-size: resp(20, 360);
+    }
+    &-wrap {
+      display: flex;
+    }
+  }
+  &-swiper {
+    &__scrollbar {
+      @include _767 {
+        width: calc(100% - resp(16, 360))!important;
+      }
+    }
+    &__swiper {
+      margin-bottom: resp(75);
+      padding-left: 7.5%;
+      @include _767 {
+        margin-bottom: resp(20, 360);
+        padding-left: resp(16, 360);
+      }
+    }
+    &__card {
+      position: relative;
+      z-index: 0;
+      padding: resp(90) resp(58);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: resp(30);
+      border: resp(3) solid rgba(242, 189, 115, 0.7);
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .25);
+      background: linear-gradient(to bottom, rgba(242, 189, 115, 0.7), rgba(222, 180, 118, 0));
+      transition: background .3s ease;
+      @include _767 {
+        padding: resp(40, 360) resp(24, 360) resp(28, 360);
+      }
+      @include interactive {
+        &:hover {
+          background: #fff;
+        }
+      }
+    }
+  }
+}
+
+.categories-card__title {
+  position: static;
+  @include font(Benzin, 400, sans-serif);
+  font-size: resp(36);
+  line-height: 1.4em;
+  transition: color .3s ease;
+  @include _767 {
+    font-size: resp(14, 360);
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @include interactive {
+    &:hover {
+      color: #B99C35;
+    }
+  }
+}
+

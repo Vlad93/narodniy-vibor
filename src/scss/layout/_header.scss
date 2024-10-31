@@ -2,13 +2,43 @@
   left: 0;
   top: 0;
   width: 100%;
-  position: relative;
+  position: fixed;
   z-index: 3;
-  &.fixed {
-    position: fixed;
+  &__search-open {
+    display: flex;
+    align-items: center;
+    gap: resp(10);
+    @include _767 {
+      gap: resp(10, 360);
+    }
+  }
+  &__search-open-icon {
+    width: resp(36);
+    height: resp(36);
+    @include _767 {
+      width: resp(17, 360);
+      height: resp(17, 360);
+    }
+    & svg {
+      width: 100%;
+      height: 100%;
+      fill: #fff;
+      transition: stroke .3s ease, transform .3s ease;
+    }
   }
   &__top {
-    background-color: #000;
+    background-color: transparent;
+    transition: background-color .3s ease;
+    @include _767 {
+      background-color: #000;
+    }
+    &-wrap {
+      flex: 1;
+      transition: .3s ease;
+      @include _767 {
+        margin-right: resp(29, 360);
+      }
+    }
     &-desk {
       display: flex;
       align-items: center;
@@ -16,11 +46,39 @@
       width: 100%;
       left: 0;
       z-index: 0;
-      padding: resp(9) 0 resp(11);
+      gap: resp(46);
+      padding: resp(25) 0 resp(15);
       width: 100%;
       transition: background-color .3s ease;
+      transition: paddin .3s ease;
       @include _767 {
-        display: none;
+        padding: resp(5, 360) 0;
+      }
+    }
+    &-btn {
+      border: none;
+      outline: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      font-family: 'Tenor Sans', sans-serif;
+      font-size: resp(20);
+      line-height: 1.3em;
+      color: #fff;
+      transition: background .3s ease, color .3s ease;
+      @include _767 {
+        font-size: resp(12, 360);
+      }
+      @include interactive {
+        &:hover {
+          background: $primary;
+          -webkit-background-clip: text; /* Обрезка фона по тексту */
+          color: transparent;
+        }
+        &:hover .header__search-open-icon svg {
+          stroke: #FDD69D;
+          transform: scale(1.05) translateX(resp(5));
+        }
       }
     }
     &-mob {
@@ -32,54 +90,8 @@
       }
     }
   }
-  &__address {
-    display: flex;
-    align-items: center;
-    gap: resp(11);
-    color: #fff;
-    @include font(Corsa Grotesk, 400, sans-serif);
-    font-size: resp(14);
-    line-height: 1.3em;
-    letter-spacing: .05em;
-    &::before {
-      content: '';
-      display: block;
-      width: resp(18);
-      height: resp(20);
-      background: url('../img/icons/location.svg') no-repeat center / contain;
-    }
-    @include _767 {
-      max-width: 65%;
-      gap: resp(7, 360);
-      font-size: resp(10, 360);
-      &::before {
-        width: resp(14, 360);
-        height: resp(16, 360);
-      }
-    }
-  }  
-  &__worktime {
-    max-width: resp(388);
-    display: flex;
-    align-items: flex-start;
-    gap: resp(12);
-    @include _767 {
-      // display: none;
-    }
-    &-title {
-      line-height: 1.25em;
-      font-weight: 600;
-      font-size: resp(16);
-      letter-spacing: 0.02em;
-    }
-    &-content {
-      line-height: 1.25em;
-      font-weight: 400;
-      font-size: resp(16);
-      letter-spacing: 0.02em;
-    }
-  }
   &__desk-wrap {
+    width: 100%;
     display: flex;
     align-items: flex-start;
     @include _767 {
@@ -87,16 +99,36 @@
     }
   }
   &.fixed &__top {
-    z-index: 1;
+    background-color: $secondary;
+    @include _767 {
+      background-color: #000;
+    }
+    &-desk {
+      padding: resp(8) 0 resp(6);
+      @include _767 {
+        padding: resp(4, 360) 0;
+      }
+    }
   }
-  &.fixed &__middle {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    padding: 0;
+  &.fixed &__logo {
+    max-width: resp(70);
+    @include _767 {
+      max-width: calc((43 / 360)* 100vw);
+    }
   }
-  &.fixed &__bottom {
-    background-color: $primary;
+  &.fixed &__title {
+    transform: translateX(resp(76));
+    font-size: calc((50 / 1920)* 100vw);
+    width: 100%;
+    flex: 1;
+  }
+  &.fixed &__top-login-search-wrap {
+    width: max-content;
+  }
+  &.fixed &__top-wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
   }
    &-progress {
     position: absolute;
@@ -106,18 +138,121 @@
     height: 1.5px;
   }
   &__logo {
-    max-width: resp(417);
+    max-width: resp(188);
     display: block;
     width: 100%;
+    transition: max-width .3s ease;
     @include _767 {
-      max-width: resp(176, 360);
+      max-width: resp(43, 360);
+    }
+  }
+  &__top-login-search-wrap {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    gap: resp(44);
+    transform: translateX(resp(76));
+    @include _767 {
+      transform: none;
+      gap: resp(26, 360);
+    }
+  }
+  &__title {
+    position: relative;
+    font-size: resp(128);
+    font-family: "Vezla", sans-serif;
+    // text-transform: uppercase;
+    line-height: 1em;
+    z-index: 0;
+    text-align: center;
+    background: $primary;
+    -webkit-background-clip: text; /* Обрезка фона по тексту */
+    color: transparent;
+    @include _767 {
+      display: none;
+    }
+  }
+  &__search {
+    position: relative;
+    display: flex;
+    &-close-btn {
+      width: resp(40);
+      height: resp(40);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      border: none;
+      outline: none;
+      right: resp(15);
+      top: 50%;
+      transform: translateY(-50%);
+      @include _767 {
+        right: resp(12, 360);
+        width: resp(30, 360);
+        height: resp(30, 360);
+      }
+      & svg {
+        width: resp(26);
+        height: resp(26);
+        fill: #fff;
+        @include _767 {
+          width: resp(13, 360);
+          height: resp(13, 360);
+        }
+      }
+    }
+    & .header__search-input-wrap {
+      padding: resp(2);
+      position: absolute;
+      right: 0;
+      opacity: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      visibility: hidden;
+      transition: opacity .3s ease, visibility .3s ease;
+      @include _767 {
+        padding: resp(2, 360);
+        position: fixed;
+        top: resp(45, 360);
+        right: resp(1, 360);
+        z-index: 3;
+        width: calc(100% - resp(2, 360));
+        transform: translateY(resp(5, 360));
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: $primary;
+      }
+    }
+    &.open .header__search-input-wrap {
+      opacity: 1;
+      visibility: visible;
+    }
+    & input {
+      color: #fff;
+      padding-right: resp(54);
+      background-color: #110E32;
+      border: none;
+      width: 24vw;
+      @include _767 {
+        width: 100%;
+        padding-right: resp(45, 360);
+      }
     }
   }
   .logo__img {
     width: 100%;
   }
   &__mob {
-    // position: relative;
     display: none;
     background-color: $primary;
     @include _767 {
@@ -129,8 +264,7 @@
       transition: background-color .3s ease, box-shadow .3s ease;
     }
     &-btn {
-      // padding: resp(10, 360) resp(6, 360);
-      display: flex;
+      display: none;
       flex-direction: column;
       z-index: 2;
       justify-content: center;
@@ -139,6 +273,9 @@
       gap: resp(8, 360);
       width: resp(41, 360);
       height: resp(41, 360);
+      @include _767 {
+        display: flex;
+      }
       &-line,
       &::before,
       &::after  {
@@ -146,33 +283,27 @@
         margin: 0 auto;
         display: block;
         justify-content: center;
-        width: resp(27, 360);
+        width: resp(30, 360);
         height: resp(2, 360);
-        background-color: $white;
+        background: $primary;
         border-radius: resp(2, 360);
         transform-origin: 0 0;
         transition: transform .3s ease, width .3s ease, background-color .3s ease;
       }
-      &::after {
-        transform-origin: 100%;
-        transform: scaleX(.5);
-      }
-    }
-    &-btn-close {
-      padding: resp(3, 360);
-      width: resp(20, 360);
-      height: resp(20, 360);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      border: none;
-      outline: none;
-      top: resp(13, 360);
-      right: resp(24, 360);
-      &-icon {
-        width: 100%;
-        height: 100%;
+      &.active {
+        position: relative;
+        z-index: 4;
+        &::after {
+          width: 85%;
+          transform: translate(resp(6,360), resp(4, 360)) rotate(-45deg);
+        }
+        & .header__mob-btn-line {
+          transform: scale(0);
+        }
+        &::before {
+          width: 85%;
+          transform: translate(resp(8,360), resp(-1, 360)) rotate(45deg);
+        }
       }
     }
     &-top-wrap {
@@ -199,46 +330,8 @@
         margin-bottom: resp(15, 360);
       }
     }
-    &-worktime {
-      margin-bottom: resp(20, 360);
-      max-width: 100%;
-      color: #fff;
-      gap: resp(4, 360);
-      & .header__worktime-title {
-        max-width: resp(65, 360);
-        font-size: resp(12, 360);
-      }
-      & .header__worktime-content {
-        font-size: resp(10, 360);
-      }
-    }
-  }
-  &__middle {
-    position: relative;
-    z-index: 0;
-    transition: height .3s ease, padding .3s ease;
-    &-wrap {
-      padding: resp(6) 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      @include _767 {
-        padding: resp(11, 360) 0;
-      }
-    }
-    & .header__btn {
-      @include _767 {
-        display: none;
-      }
-    }
-    &-worktime {
-      @include _767 {
-        display: none;
-      }
-    }
   }
   &__mob-wrap {
-    // position: relative;
     z-index: 1;
   }
   &__logo_mob {
@@ -277,19 +370,6 @@
       border-bottom: 1px solid #fff;
     }
   }
-  // &__wrap {
-  //   display: flex;
-  //   align-items: center;
-  //   @include _992 {
-  //     flex-direction: column;
-  //     align-items: flex-start;
-  //     gap: 20px;
-  //     color: $primary;
-  //     & .header__logo {
-  //       display: none;
-  //     }
-  //   }
-  // }
   &__phone-wrap {
     margin-right: 32px;
     @include _1200 {
@@ -300,239 +380,92 @@
       color: $primary;
     }
   }
-  &__cooperation-btn {
-    font-size: 14px;
-    flex-basis: 240px;
-    @include _992 {
-      max-width: 240px;
-      width: 100%;
-      flex: auto;
-    }
-  }
   &-menu__list {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: resp(40);
+    gap: resp(88);
     @include _767 {
-      align-items: flex-start;
+      width: 100%;
+      align-items: center;
       flex-direction: column;
       justify-content: flex-start;
       gap: 0;
-      // gap: resp(18, 363);
     }
   }
   &__bottom {
     transition: background-color .2s ease;
-    &-wrap {
-      position: relative;
-      padding: resp(16) resp(20);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: resp(40);
-      background-color: $primary;
-      @include _767 {
-        gap: 0;
-        padding: resp(7, 360) resp(10, 360);
-      }
-    }
-  }
-  &__catalog {
-    &-btn {
-      border: none;
-      outline: none;
-      display: flex;
-      align-items: center;
-      gap: resp(15);
-      color: #fff;
-      font-weight: 600;
-      font-size: resp(24);
-      line-height: 1.3em;
-      transition: color .2s ease;
-      &-icon {
-        display: block;
-        width: resp(24);
-        transition: transform .2s ease;
-      }
-      @include interactive {
-        &:hover &-icon {
-          transform: scaleY(1.3);
-        }
-      }
-      @include _767 {
-        display: none;
-      }
-    }
-    &-search-wrap {
-      max-width: 66%;
-      width: 100%;
-      @include _767 {
-        max-width: 100%;
-      }
-    }
-    &-search {
-      &-label {
-        position: relative;
-        display: block;
-        width: 100%;
-        &::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: resp(16);
-          transform: translateY(-50%);
-          display: block;
-          width: resp(23);
-          height: resp(23);
-          background: url('../img/icons/search.svg') no-repeat center / 85%;
-          @include _767 {
-            left: resp(13, 360);
-            width: resp(11, 360);
-            height: resp(11, 360);
-          }
-        }
-      }
-      &-input {
-        width: 100%;
-        padding: resp(7) resp(16) resp(7) resp(62);
-        background-color: #fff;
-        font-size: resp(20);
-        line-height: 1.3em;
-        font-weight: 400;
-        border-radius: resp(10);
-        &::placeholder {
-          color: #626262;
-        }
-        @include _767 {
-          padding: resp(4, 360) resp(13, 360) resp(4, 360) resp(32, 360);
-          font-size: resp(12, 360);
-          line-height: 1,3em;
-          border-radius: resp(5, 360);
-        }
-      }
-    }
-    &-nav-wrap {
-      padding: resp(30) resp(72) resp(40) resp(30);
-      width: 100%;
-      max-width: resp(530);
+    background-color: #000;
+    @include _767 {
+      background-color: #110E32;
+      overflow-y: auto;
       position: absolute;
-      top: 100%;
       left: 0;
+      top: 0;
       opacity: 0;
       visibility: hidden;
-      transform: translate(-20px,0);
-      background-color: #34363B;
-      transition: transform .3s ease, opacity .3s ease, visibility .3s ease;
+      width: 100%;
+      max-height: 100vh;
+      height: 100vh;
+      z-index: 2;
+      transform: translateY(-5%);
+      transition: transform .3s ease, opacity .3s ease, visibility .3s ease, background-color .3s ease, box-shadow .3s ease;
       &.open {
         opacity: 1;
+        transform: translateY(0%);
         visibility: visible;
-        transform: none;
       }
     }
-    &-btn-close {
-      width: resp(30);
-      height: resp(30);
+    &-mob {
+      display: none;
+      @include _767 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: resp(14, 360);
+      }
+    }
+    &__bottom-logo-wrap {
+      width: resp(133, 360);
+      height: auto;
+    }
+    &__bottom-logo {
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+    &-wrap {
+      position: relative;
+      padding: resp(20) 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: none;
-      outline: none;
-      transition: color .2s ease;
-      &-icon {
-        width: 60%;
-        height: 60%;
-        transition: transform .2s ease;
-      }
-      @include interactive {
-        &:hover &-icon {
-          transform: rotate(90deg);
-        }
-      }
-    }
-    &-btn-wrap {
-      margin-bottom: resp(12);
-      display: flex;
-      align-items: center;
-      gap: resp(10);
-    }
-    &-btn-link {
-      color: #fff;
-      font-weight: 600;
-      font-size: resp(24);
-      line-height: 1.3em;
-      transition: color .2s ease;
-      @include interactive {
-        &:hover {
-          color: #537BD5;
-        }
+      gap: resp(88);
+      @include _767 {
+        gap: 0;
+        flex-direction: column;
+        align-items: center;
+        padding: resp(56, 360) 0 resp(26, 360);
       }
     }
   }
   &__nav {
+    // flex: 1;
     @include _767 {
-      margin-bottom: resp(50, 360);
+      margin-bottom: resp(20, 360);
     }
   }
   &__btn_mob {
     width: 100%;
     border: 1px solid #fff;
   }
-}
-
-.catalog-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  &__item {
-    width: 100%;
-    border-bottom: 1px solid #fff;
-  }
-  &__link {
-    padding: resp(8) 0 resp(6);
-    display: block;
-    font-weight: 400;
-    font-size: resp(20);
-    line-height: 1.3em;
-    color: #fff;
-    transition: color .2s ease;
-    @include interactive {
-      &:hover {
-        color: #537BD5;
-      }
-    }
-  }
-}
-
-.phone-link {
-  display: flex;
-  align-items: center;
-  gap: resp(5);
-  font-size: resp(24);
-  line-height: 1.25em;
-  font-weight: 700;
-  transition: color .2s ease;
-  @include _767 {
-    font-size: resp(12, 360);
-  }
-  &__icon {
-    display: block;
-    width: resp(50);
-    height: resp(50);
-    object-fit: contain;
-    object-position: center;
-    transition: transform .2s ease;
+  &__btn {
     @include _767 {
-      width: resp(23, 360);
-      height: resp(23, 360);
-    }
-  }
-  @include interactive {
-    &:hover {
-      color: $primary;
-    }
-    &:hover &__icon {
-      transform: scale(1.03);
+      margin-bottom: resp(30, 360)
     }
   }
 }
+
+
+
+

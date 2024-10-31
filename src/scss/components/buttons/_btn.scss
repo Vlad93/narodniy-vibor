@@ -1,19 +1,20 @@
 .btn {
-  padding: resp(14) resp(40);
+  padding: resp(6) resp(32);
   display: inline-block;
   text-align: center;
-  font-size: resp(24);
-  font-weight: 600;
-  border-radius: resp(50);
+  font-size: resp(20);
+  font-weight: 400;
+  line-height: 1.2em;
+  @include font(Tenor Sans, 400, sans-serif);
+  border-radius: resp(7);
   border: none;
   outline: none;
-  color: #fff;
+  color: #000;
   background: $primary;
   transition: background-color .3s ease, box-shadow .3s ease, transform .3s ease;
   @include _767 {
-    padding: resp(10, 360) resp(15, 360);
-    padding: resp(10, 360) resp(16, 360);
-    border-radius: resp(50, 360);
+    padding: resp(6, 360) resp(32, 360);
+    border-radius: resp(7, 360);
     font-size: resp(20, 360);
   }
   &.animated {
@@ -74,7 +75,7 @@
   @include interactive {
     &:hover {
       transform: scale(1.03);
-      box-shadow: 3px 7px 8px 0px #537BD5;
+      box-shadow: 0 0 resp(15) 0 #fff0da;
     }
   }
 

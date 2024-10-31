@@ -52,25 +52,25 @@ button {
 }
 
 body {
+  position: relative;
   min-width: 320px;
   min-height: 100vh;
+  padding-top: resp(375);
   overflow-x: hidden;
-  background-color: #fff;
-  @include font(Gilroy, 500, sans-serif);
-  font-size: resp(20);
+  background-color: $secondary;
+  @include font(Benzin, 400, sans-serif);
+  font-size: resp(24);
   line-height: 1.25em;
-  color: #000;
+  color: #fff;
   scroll-behavior: smooth;
+  // transition: padding-top .3s ease;
   &.lock {
     width: 100vw;
     position: fixed;
     overflow-y: scroll;
   }
   @include _767 {
-    padding-top: resp(74, 360);
-  }
-  &.front {
-    background-color: #F4F3F3;
+    padding-top: resp(68, 360);
   }
 }
 
@@ -81,6 +81,15 @@ body {
   @include _767 {
     width: 100%;
     padding: 0 resp(16, 360);
+  }
+  &-wide {
+    width: calc(85.63% + resp(64));
+    transform: translateX(resp(64));
+    @include _767 {
+      width: 100%;
+      padding: 0 resp(16, 360);
+      transform: none;
+    }
   }
 }
 .container-full {
