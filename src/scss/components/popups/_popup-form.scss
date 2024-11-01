@@ -9,6 +9,17 @@
       font-size: resp(14, 360);
     }
   }
+  .input-form-label {
+    margin-bottom: resp(7);
+    font-size: resp(20);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.3em;
+    display: block;
+    @include _767 {
+      margin-bottom: resp(5, 360);
+      font-size: resp(12, 360);
+    }
+  }
   & .form-container {
     width: 100%;
     display: flex;
@@ -26,42 +37,91 @@
     &::before {
       display: none;
     }
+    & .input-border-wrap {
+      position: relative;
+      display: block;
+      padding: resp(2);
+      @include _767 {
+        padding: resp(2, 360);
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        background: $primary;
+      }
+    }
   }
   & input {
+    position: relative;
     width: 100%;
-    padding: resp(13) resp(40);
+    padding: resp(18) resp(20);
     border: none;
     line-height: 1.3em;
-    background-color: #DADADA;
+    background-color: transparent;
     letter-spacing: 0.04em;
-    color: #000;
+    color: #fff;
+    background-color: #110e32;
+    z-index: 1;
     font-size: resp(24);
     &:focus::placeholder {
       color: transparent;
     }
     &::placeholder {
-      color: rgba(0, 0, 0, 0.43);
+      color: rgba(255, 255, 255, 0.8);
     }
     @include _767 {
-      padding: resp(12, 360) resp(15, 360);
+      padding: resp(6, 360) resp(10, 360);
       font-size: resp(14, 360);
     }
   }
   & .form-btn {
-    max-width: 100%;
-    padding: resp(13) resp(20);
+    margin: 0 auto resp(20) auto;
+    max-width: resp(703);
+    padding: resp(21);
     width: 100%;
+    text-align: center;
     line-height: 1.3em;
-    margin-top: resp(15);
+    margin-top: resp(40);
     @include _767 {
+      width: 100%;
+      max-width: 100%;
       padding: resp(13, 360) resp(20, 360);
-      margin-top: resp(9, 360);
+      margin-top: 0;
     }
   }
-  &__checkbox {
+  &__checkbox:not(:last-child) {
     margin-top: resp(22);
     @include _767 {
       margin-top: resp(9, 360);
     }
   }
+}
+
+.logo-messengers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: resp(30);
+  &__logo-wrap {
+    display: flex;
+    align-items: center;
+    width: resp(191);
+    height: auto;
+    @include _767 {
+      width: resp(133, 360);
+      gap: resp(14, 360);
+    }
+  }
+  &__logo {
+    width: 100%;
+  }
+  @include _767 {
+    gap: resp(14, 360);
+  }
+
 }

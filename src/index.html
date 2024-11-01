@@ -671,9 +671,11 @@
                 <div class="input-wrap  required">
                   <label for="name" class="form-label">
                     <span class="input-form-label">
-                      НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ
+                      Наименование организации
                     </span>
-                    <input type="text" name="name" class="form-input" required>
+                    <span class="input-border-wrap">
+                      <input type="text" name="name" class="form-input" required>
+                    </span>
                   </label>
                 </div>
                 <div class="input-wrap  required">
@@ -681,39 +683,49 @@
                     <span class="input-form-label">
                       УНП
                     </span>
-                    <input type="text" name="unp" class="form-input" required>
+                    <span class="input-border-wrap">
+                      <input type="text" name="unp" class="form-input" required>
+                    </span>
                   </label>
                 </div>
                 <div class="input-wrap  required">
                   <label for="contact_name" class="form-label">
                     <span class="input-form-label">
-                      КОНТАКТНОЕ ЛИЦО
+                      Контактное лицо
                     </span>
-                    <input type="text" name="contact_name" class="form-input" required>
+                    <span class="input-border-wrap">
+                      <input type="text" name="contact_name" class="form-input" required>
+                    </span>
                   </label>
                 </div>
                 <div class="input-wrap required">
-                  <span class="input-form-label">
-                    ТЕЛЕФОН
-                  </span>
                   <label for="phone" class="form-label">
-                    <input type="text" name="phone" class="form-input" required phoneMask_JS>
+                    <span class="input-form-label">
+                      Телефон
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="phone" class="form-input" required phoneMask_JS>
+                    </span>
                   </label>
                 </div>
                 <div class="input-wrap required">
-                  <span class="input-form-label">
-                    E-mail
-                  </span>
                   <label for="email" class="form-label">
-                    <input type="text" name="email" class="form-input" required>
+                    <span class="input-form-label">
+                      E-mail
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="email" class="form-input" required>
+                    </span>
                   </label>
                 </div>
                 <div class="input-wrap required">
                   <label for="nomination" class="form-label">
                     <span class="input-form-label">
-                      НОМИНАЦИЯ
+                      Номинация
                     </span>
-                    <input type="text" name="nomination" class="form-input" required>
+                    <span class="input-border-wrap">
+                      <input type="text" name="nomination" class="form-input" required>
+                    </span>
                   </label>
                 </div>
                 <button class="form-btn btn" agreementControlBtn_JS>
@@ -728,14 +740,12 @@
                     Даю согласие на использование моих персональных данных.
                   </p>
                 </div>
-                <div class="order-popup__form-checkbox popup-form__checkbox form-checkbox">
-                  <div class="checked">
-                      <label for="agreement_mail"></label>
-                      <input type="checkbox" name="agreement_mail" checked>
-                  </div>
-                  <p>
+                <div class="order-popup__form-checkbox popup-form__checkbox checkbox form-checkbox">
+                  <label for="agreement_mail" class="checkbox-label">
                     Даю согласие на получение информационных писем и сообщений.
-                  </p>
+                    <input type="checkbox" name="agreement_mail" id="agreement_mail" class="checkbox__input" checked>
+                    <span class="checkbox__span"></span>
+                  </label>
                 </div>
               </div>
             </form>
@@ -767,9 +777,9 @@
               </ul>
             </div>
           </div>
-          <div class="order-popup__return" popupClose_JS>
+          <button class="order-popup__return popup__return" popupClose_JS>
             ВЕРНУТЬСЯ
-          </div>
+          </button>
           <div class="order-popup__close popup__close" popupClose_JS>
             <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M23.4997 20.1085L3.63047 0.239258L0.239258 3.63047L20.1085 23.4997L0.239258 43.3689L3.63047 46.7601L23.4997 26.8909L43.3689 46.7601L46.7601 43.3689L26.8909 23.4997L46.7601 3.63047L43.3689 0.239258L23.4997 20.1085Z" fill="url(#paint0_linear_1595_1478)"/>
