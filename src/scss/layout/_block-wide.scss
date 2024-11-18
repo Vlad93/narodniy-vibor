@@ -1,0 +1,19 @@
+.block-wide {
+  display: flex;
+  padding: resp(64) 0 resp(123);
+  @include _767 {
+    padding: resp(34, 360) 0 resp(38, 360);
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: resp(60);
+    @include _767 {
+      gap: resp(20, 360);
+    }
+  }
+}
+.block-black {
+  background-color: #000;
+}

@@ -1,0 +1,38 @@
+.section-help {
+  &__qrs {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: resp(170);
+    row-gap: resp(50);
+    @include _767 {
+      column-gap: 0;
+      row-gap: resp(50, 360);
+    }
+  }
+  &__qr-wrap {
+    width: resp(240);
+    height: resp(240);
+    @include _767 {
+      width: resp(240,360);
+      height: resp(240, 360);
+    }
+  }
+  &__qr {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: contain;
+  }
+}
+
+.section-main_help {
+  & .block-black {
+    padding-bottom: resp(60);
+    @include _767 {
+      padding-bottom: resp(40, 360);
+    }
+  }
+}

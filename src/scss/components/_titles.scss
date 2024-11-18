@@ -1,5 +1,41 @@
-.section-title {
-  margin-bottom: 10px;
-  color: $primary;
-  text-align: center;
+.page-title {
+  margin-bottom: resp(18);
+  font-size: resp(96);
+  @include font(Vezla, 400, sans-serif);
+  text-transform: none;
+  line-height: 1.3em;
+  background: linear-gradient(to right, #fdd69d, #edb261);
+  -webkit-background-clip: text;
+  color: transparent;
+  @include _767 {
+    margin-bottom: resp(18, 360);
+    font-size: resp(36, 360);
+  }
+}
+.page-desc {
+  padding-bottom: resp(32);
+  color: #fff;
+  font-weight: 400;
+  font-size: resp(20);
+  line-height: 1.4em;
+  @include font(Benzin, 400, sans-serif);
+  @include _767 {
+    text-align: justify;
+    font-size: resp(14, 360);
+    padding-bottom: resp(11, 360);
+  }
+}
+
+.title-wrap-line {
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: resp(18);
+    background: url('../img/gold-line.webp') no-repeat center / 100%;
+    @include _767 {
+      height: resp(10, 360);
+    }
+  }
 }

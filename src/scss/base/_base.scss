@@ -55,7 +55,7 @@ body {
   position: relative;
   min-width: 320px;
   min-height: 100vh;
-  padding-top: resp(375);
+  padding-top: resp(355);
   overflow-x: hidden;
   background-color: $secondary;
   @include font(Benzin, 400, sans-serif);
@@ -70,6 +70,7 @@ body {
     overflow-y: scroll;
   }
   @include _767 {
+    font-size: resp(14, 360);
     padding-top: resp(68, 360);
   }
 }
@@ -134,10 +135,8 @@ input, textarea {
 }
 
 [onScrollDisplay_JS] {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-transform: translateY(5.2083333333vw) !important;
-          transform: translateY(5.2083333333vw) !important;
+  transition: 0.7s ease;
+  transform: translateY(-5.2083333333vw) !important;
   opacity: 0 !important;
 }
 [onScrollDisplay_JS].visible {
@@ -147,8 +146,22 @@ input, textarea {
 }
 
 .validate_error {
+  // transform: translateY(-100%);
   border-color: red !important;
   color: red !important;
+
+}
+
+
+label.validate_error, .input-border-wrap label  {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  font-size: resp(14);
+  @include _767 {
+    top: 115%;
+    font-size: resp(11, 360);
+  }
 }
 .validate_error::-webkit-input-placeholder {
   color: red !important;

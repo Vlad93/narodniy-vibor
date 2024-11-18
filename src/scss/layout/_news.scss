@@ -1,0 +1,130 @@
+.section-news {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: resp(80);
+    @include _767 {
+      grid-template-columns: repeat(1, 1fr);
+      gap: resp(20, 360);
+    }
+  }
+}
+
+.section-new {
+  &__top {
+    position: relative;
+    margin-bottom: resp(80);
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    column-gap: resp(60);
+    @include _767 {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: resp(16, 360);
+      margin-bottom: resp(30, 360);
+    }
+  }
+  &__img-wrap {
+    position: relative;
+    min-width: 40%;
+    width: 40%;
+    height: resp(740);
+    border: resp(2) solid #fdd69d;
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(to bottom, transparent, #000);
+      opacity: .8;
+      transition: opacity .3s ease;
+    }
+    @include _767 {
+      border: resp(2, 360) solid #fdd69d;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  &__title {
+    flex: 1;
+    padding-top: resp(60);
+    padding-bottom: 23%;
+    margin-bottom: resp(30);
+    font-weight: 700;
+    font-size: resp(48);
+    line-height: 1.3em;
+    background: linear-gradient(to right, #fdd69d, #edb261);
+    -webkit-background-clip: text;
+    color: transparent;
+    @include _767 {
+      padding-bottom: 0;
+      padding-top: 0;
+      margin-bottom: 0;
+      font-size: resp(20, 360);
+    }
+  }
+  &__top-main {
+    position: relative;
+    margin-top: -23%;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: resp(20);
+    min-height: resp(384);
+    width: 75%;
+    padding: resp(90) resp(60) resp(90) resp(115);
+    background: #000;
+    & p {
+      line-height: 1.35em;
+    }
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: resp(60);
+      top: resp(50);
+      width: resp(9);
+      height: calc(100% - resp(100));
+      background: url('../img/card-border.webp') no-repeat center / cover;
+      @include _767 {
+        left: 0;
+        top: resp(13, 360);
+        height: calc(100% - resp(26, 360));
+        width: resp(9, 360);
+      }
+    }
+    &::after {
+      content: '';
+      display: none;
+      @include _767 {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: resp(-16, 360);
+        width: calc(100% + resp(32, 360));
+        height: 100%;
+        background-color: #000;
+        z-index: -1;
+      }
+    }
+    @include _767 {
+      margin: 0;
+      width: 100%;
+      gap: resp(10, 360);
+      padding: resp(23, 360) 0 resp(23, 360) resp(28, 360);
+    }
+  }
+}

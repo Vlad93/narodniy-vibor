@@ -1,0 +1,28 @@
+.verification-popup {
+  &__main {
+    padding: calc((116 / 1920)* 100vw) calc((219 / 1920)* 100vw) calc((21 / 1920)* 100vw);
+    @include _767 {
+      padding: calc((61 / 360)* 100vw) calc((16 / 360)* 100vw) calc((18 / 360)* 100vw);
+    }
+  }
+  &__form {
+    max-width: 100%;
+    .input-wrap {
+      flex: 1;
+      @include _767 {
+        flex: none;
+      }
+    }
+    & .input-wrap_phone, .input-wrap_email {
+      flex-basis: calc(50% - resp(25));
+      @include _767 {
+        flex-basis: 100%;
+      }
+    }
+  }
+  &__form-container.form-container {
+    column-gap: resp(50);
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

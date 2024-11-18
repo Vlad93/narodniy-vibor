@@ -1,0 +1,379 @@
+.cards-block {
+  padding-bottom: resp(200);
+  &_poll {
+    padding-top: resp(40);
+    @include _767{
+      padding-top: resp(20, 360);
+    }
+    &-subcategory {
+      & .cards-block__grid {
+        @include _767{
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+  @include _767 {
+    padding-bottom: resp(50, 360);
+  }
+  &__year {
+    margin-top: resp(-120);
+    line-height: 1em;
+    @include font(Tenor Sans, 400, sans-serif);
+    text-align: right;
+    font-size: resp(400);
+    transform: translateX(resp(70));
+    background: linear-gradient(to right, #fdd69d, #edb261);
+    -webkit-background-clip: text;
+    color: transparent;
+    @include _767 {
+      margin-top: resp(-35, 360);
+      font-size: resp(128, 360);
+      text-align: center;
+      transform: none;
+    }
+  }
+  &__title {
+    margin-bottom: resp(43);
+    @include _767 {
+      margin-bottom: resp(30, 360);
+      line-height: 1.25em;
+    }
+  }
+  &__grid {
+    display: grid;
+    row-gap: resp(72);
+    column-gap: resp(88);
+    grid-template-columns: repeat(3, 1fr);
+    @include _767 {
+      row-gap: resp(30, 360);
+      column-gap: resp(16, 360);
+      grid-template-columns: repeat(2, calc(50% - resp(8, 360)));
+    }
+  }
+  &__grid-item {
+    height: 100%;
+    min-height: resp(820);
+    @include _767 {
+      min-height: resp(260, 360);
+    }
+  }
+  &_subcategory-title {
+    margin-bottom: resp(13);
+    @include font(Vezla, 400, sans-serif);
+    font-size: resp(64);
+    background: linear-gradient(to right, #fdd69d, #edb261);
+    -webkit-background-clip: text;
+    color: transparent;
+    line-height: 1.3em;
+    @include _767 {
+      margin-bottom: resp(13, 360);
+      font-size: resp(24, 360);
+    }
+  }
+  &_subcategory-subtitle {
+    margin-bottom: resp(70);
+    @include font(Vezla, 400, sans-serif);
+    font-size: resp(48);
+    @include _767 {
+      margin-bottom: resp(20, 360);
+      font-size: resp(20, 360);
+    }
+  }
+  &_poll-subcategory {
+    & .cards-block__title {
+      @include _767 {
+        line-height: 1.1em;
+        margin-bottom: resp(16, 360);
+      }
+    }
+    & .cards-block__subtitle {
+      font-size: resp(32);
+      font-weight: 400;
+      line-height: 1.3em;
+      margin-bottom: resp(80);
+      background: linear-gradient(to right, #fdd69d, #edb261);
+      -webkit-background-clip: text;
+      color: transparent;
+      @include _767 {
+        margin-bottom: resp(20, 360);
+        font-size: resp(16, 360);
+      }
+    }
+  }
+}
+
+.card {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: resp(18);
+  @include _767 {
+    padding-left: resp(5, 360);
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: resp(18);
+    top: 0;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    background: url('../img/card-border.webp') no-repeat center / cover;
+    @include _767 {
+      width: resp(5, 360);
+    }
+  }
+  &__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.card-main-category {
+  max-width: 100%;
+  padding: resp(30) resp(40) resp(30) resp(60);
+  @include _767 {
+    padding: resp(10, 360) resp(10, 360);
+  }
+  &__title {
+    margin-bottom: resp(20);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: resp(36);
+    line-height: 1.3em;
+    text-align: center;
+    width: 100%;
+    @include _767 {
+      font-size: resp(14, 360);
+      margin-bottom: resp(20, 360);
+    }
+  }
+  &__subcategory-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: resp(25);
+    @include _767 {
+      align-items: center;
+      gap: resp(20, 360);
+    }
+  }
+  &__subcategory-list-link {
+    font-size: resp(24);
+    line-height: 1.3em;
+    transition: .3s ease;
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right,#fdd69d,#edb261);
+      top: 103%;
+      left: 0;
+      transform-origin: 0;
+      transform: scale(0);
+      transition: transform .3s;
+    }
+    @include interactive {
+      &:hover {
+        background: linear-gradient(to right, #fdd69d, #edb261);
+        -webkit-background-clip: text;
+        color: transparent;
+        &::after {
+          transform: scale(1);
+        }
+      }
+    }
+    @include _767 {
+      font-size: resp(12, 360);
+    }
+  }
+}
+
+
+.card-nomination, .card-poll {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  &__title {
+    width: 100%;
+    display: block;
+    font-weight: 400;
+    font-size: resp(36);
+    line-height: 1.3em;
+    text-align: center;
+    padding: resp(30) resp(20);
+    background-color: #16130F;
+    @include _767 {
+      padding: resp(16, 360) resp(5, 360);
+      font-size: resp(14, 360);
+    }
+  }
+  &__list {
+    margin-bottom: resp(30);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: resp(10);
+    @include _767 {
+      margin-bottom: resp(20, 360);
+      gap: resp(10, 360);
+    }
+  }
+  &__list-item {
+    width: 100%;
+  }
+  &__list-item-name {
+    padding: resp(16) resp(50) resp(12) resp(30);
+    font-size: resp(20);
+    color: #16130F;
+    text-transform: uppercase;
+    background-color: #fff;
+    border: resp(4) solid #000;
+    @include _767 {
+      font-size: resp(11,360);
+      padding: resp(8,360) resp(10,360) resp(6,360);
+      border: resp(4, 360) solid #000;
+    }
+  }
+  &__btn {
+    padding: resp(19) resp(20);
+    margin: auto auto 0;
+    width: 97%;
+    font-size: resp(32);
+    @include _767 {
+      width: 95%;
+      padding: resp(8, 360) resp(5, 360);
+      font-size: resp(12, 360);
+    }
+  }
+  & .card__content {
+    padding-bottom: resp(70);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include _767 {
+      padding-bottom: resp(20, 360);
+    }
+  }
+}
+
+.card-poll {
+  padding-bottom: resp(32);
+  background-color: #16130F;
+  @include _767 {
+    padding-bottom: resp(30, 360);
+  }
+  &__title {
+    @include _767 {
+      padding: calc((16 / 360)* 100vw) calc((30 / 360)* 100vw);
+      line-height: 1.4em;
+    }
+  }
+  & .card__content {
+    padding-bottom: 0;
+  }
+  & .form-poll {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    &__nominants-wrap {
+      margin-bottom: resp(50);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: resp(10);
+      @include _767 {
+        gap: resp(10, 360);
+        margin-bottom: resp(50, 360);
+      }
+    }
+    &__nominant {
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: resp(16) resp(40) resp(12) resp(30);
+      font-size: resp(20);
+      color: #16130F;
+      text-transform: uppercase;
+      background-color: #fff;
+      border: resp(4) solid #000;
+      transition: color .3s ease;
+      @include interactive {
+        &:hover {
+          color: #edb261;
+        }
+      }
+      @include _767 {
+        font-size: resp(11,360);
+        padding: resp(8,360) resp(30,360) resp(6,360);
+        border: resp(4, 360) solid #000;
+      }
+    }
+    &__nominant-icon {
+      position: relative;
+      display: block;
+      width: resp(34);
+      height: resp(34);
+      border: resp(2) solid #16130F;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 5%;
+        top: -25%;
+        display: block;
+        width: 120%;
+        height: 120%;
+        background: url('../img/icons/check-poll.svg') no-repeat center / contain;
+        transform: scale(0);
+        transform-origin: 50% 50%;
+        opacity: 0;
+        transition: opacity .27s ease, transform .4s ease;
+      }
+      @include _767 {
+        width: resp(22, 360);
+        height: resp(22, 360);
+        border: resp(2, 360) solid #16130F;
+      }
+    }
+    &__nominant-input:checked ~ .form-poll__nominant-icon::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  &__btn {
+    width: 95%;
+    line-height: 1.3em;
+    @include _767 {
+      font-size: resp(16, 360);
+    }
+  }
+  &__year {
+    display: block;
+    background: linear-gradient(to right, #fdd69d, #edb261);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}

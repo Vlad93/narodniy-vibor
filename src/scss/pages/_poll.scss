@@ -1,0 +1,189 @@
+.section-poll {
+  padding-bottom: resp(100);
+  @include _767 {
+    padding-bottom: resp(50, 360);
+  }
+  &__close-block {
+    position: relative;
+  }
+  &__timer-block {
+    padding-top: resp(150);
+    @include _767 {
+      padding-top: resp(60, 360);
+    }
+  }
+  &__timer-wrap {
+    padding-top: resp(30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include _767 {
+      padding-top: resp(30, 360);
+    }
+  }
+  &__timer {
+    min-width: 56%;
+    position: relative;
+    padding: resp(57) resp(12);
+    display: flex;
+    justify-content: center;
+    border-radius: resp(20);
+    align-items: center;
+    background: url('../img/timer-bg.webp') no-repeat center / cover, #110e32;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: resp(-2);
+      top: resp(-2);
+      width: calc(100% + resp(4));
+      height: calc(100% + resp(4));
+      z-index: -1;
+      border-radius: resp(20);
+      background: linear-gradient(to bottom,#FFF0DA,#BD9A4B);
+      @include _767 {
+        left: resp(-2, 360);
+        top: resp(-2, 360);
+        width: calc(100% + resp(4, 360));
+        height: calc(100% + resp(4, 360));
+        border-radius: resp(20, 360);
+      }
+    }
+    @include _767 {
+      width: 100%;
+      border-radius: resp(20, 360);
+      border: resp(2, 360) solid transparent;
+      padding: resp(28, 360) resp(23, 360);
+    }
+  }
+  &__timer-item {
+    position: relative;
+    padding: 0 resp(30);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: resp(20);
+    font-weight: 900;
+    &:not(:last-of-type) {
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: resp(-3);
+        width: resp(3);
+        height: calc(100%  + resp(6));
+        background: linear-gradient(to bottom, #FFF0DA,#BD9A4B);
+        @include _767 {
+          top: resp(-3,360);
+          width: resp(3, 360);
+          height: calc(100%  + resp(6, 360));
+        }
+      }
+    }
+    & .number {
+      font-size: resp(68);
+      line-height: 1em;
+      background: linear-gradient(to bottom, #FFF0DA,#BD9A4B);
+      -webkit-background-clip: text;
+      color: transparent;
+      @include _767 {
+        font-size: resp(24, 360);
+      }
+    }
+    & .text {
+      font-size: resp(24);
+      line-height: 1em;
+      background: linear-gradient(to bottom, #FFF0DA,#BD9A4B);
+      -webkit-background-clip: text;
+      color: transparent;
+      @include _767 {
+        font-size: resp(10, 360);
+      }
+    }
+    @include _767 {
+      gap: resp(10, 360);
+      padding: 0 resp(2, 360);
+    }
+  }
+}
+
+.poll-close {
+  padding-top: resp(100);
+  @include _767 {
+    padding-top: resp(10, 360);
+  }
+  &__marquee-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+  }
+  &__marquee {
+    width: 100vw;
+  }
+  &__marquee-wrapper {
+    transition-timing-function: linear !important;
+  }
+  &__marquee .swiper-slide {
+    width: max-content;
+  }
+  &__content-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  &__marquee-text {
+    position: relative;
+    display: inline-block;
+    @include font(Noto Sans, 400, sans-serif);
+    line-height: 1.2em;
+    letter-spacing: .02em;
+    font-size: resp(340);
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .1));
+    color: #110e32;
+    -webkit-text-stroke: resp(2) transparent;
+    text-stroke: resp(2) transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    @include _767 {
+      font-size: resp(96, 360);
+      -webkit-text-stroke: resp(2, 360) transparent;
+      text-stroke: resp(2, 360) transparent;
+    }
+  }
+  &__medal-wrap {
+    margin-bottom: resp(50);
+    width: resp(560);
+    height: auto;
+    transform-style: preserve-3d;
+    animation: rotateAnimation 4.5s linear infinite;
+    @include _767 {
+      width: resp(214, 360);
+      margin-bottom: resp(10, 360);
+    }
+  }
+  &__medal {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+  &__title {
+    @include font(Vezla, 400, sans-serif);
+    font-size: resp(64);
+    text-align: center;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    color: #B99C35;
+    @include _767 {
+      font-size: resp(24, 360);
+    }
+  }
+}

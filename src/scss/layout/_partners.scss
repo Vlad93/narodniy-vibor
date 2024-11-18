@@ -15,16 +15,27 @@
   transition-timing-function: linear !important;
 }
 .section-partners__swiper-slide {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  background-color: #fff;
+  border: 3px solid #fdd69d;
+  padding: resp(10);
+  border-radius: 10px;
   width: 100%;
+  @include _767 {
+    padding: resp(5, 360);
+  }
 }
 .section-partners__swiper-slide img {
+  position: relative;
   width: 100%;
   height: resp(150);
   object-position: center;
-  // object-fit: contain;
+  z-index: 1;
+  object-fit: contain;
   @include _767 {
     height: resp(54, 360);
   }

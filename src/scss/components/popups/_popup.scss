@@ -17,6 +17,9 @@
   visibility: hidden;
   &__return {
     position: absolute;
+    display: flex;
+    align-items: center;
+    gap: resp(25);
     left: resp(46);
     top: resp(37);
     border: none;
@@ -25,7 +28,25 @@
     -webkit-background-clip: text;
     color: transparent;
     font-size: resp(24);
+    &::before {
+      content: '';
+      display: block;
+      width: resp(80);
+      height: resp(15);
+      background: url('../img/icons/return-icon.svg') no-repeat center / 100% auto;
+      transition: transform .3s ease;
+      @include _767 {
+        width: resp(50, 360);
+        height: resp(15, 360);
+      }
+    }
+    @include interactive {
+      &:hover::before {
+        transform: translateX(-7px);
+      }
+    }
     @include _767 {
+      gap: resp(25, 360);
       left: resp(16, 360);
       top: resp(21, 360);
       font-size: resp(14, 360);
@@ -76,6 +97,9 @@
   }
   &__close {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 5;
     top: resp(30);
     right: resp(30);
@@ -113,7 +137,7 @@
     align-items: center;
     justify-content: center;
     padding: resp(116) resp(16) resp(21);
-    background-color: 110E32;
+    background-color: #110E32;
     @include _767 {
       padding: resp(61, 360) resp(16, 360) resp(18, 360);
     }
@@ -149,13 +173,13 @@
 
 .popup__close img,
 .popup__close svg {
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 
 .fancybox-content {

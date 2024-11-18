@@ -1,0 +1,117 @@
+.winners {
+  &-block {
+    padding-top: resp(34);
+    line-height: 1.3em;
+    @include font(Tenor Sans, 400, sans-serif);
+    font-size: resp(24);
+    @include _767 {
+      padding-top: resp(18, 360);
+      font-size: resp(14, 360);
+    }
+    .winners-years-text {
+      display: block;
+      margin-bottom: resp(20);
+      line-height: 1.3em;
+      font-size: 2.7em;
+      background: linear-gradient(to right, #fdd69d, #edb261);
+      -webkit-background-clip: text;
+      color: transparent;   
+      @include _767 {
+        margin-bottom: resp(11, 360);
+      }
+    }
+    & button {
+      text-align: left;
+      @include font(Tenor Sans, 400, sans-serif);
+      line-height: 1.3em;
+      border: none;
+      outline: none;
+      background: linear-gradient(to right, #fdd69d, #edb261);
+      -webkit-background-clip: text;
+      color: transparent;
+      transition: color .3s ease;
+      @include interactive {
+        &:hover {
+          color: #fff;
+        }        
+      }
+    }
+  }
+  &-category-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: resp(30);
+    @include _767 {
+      gap: resp(20, 360);
+    }
+  }
+  &-category-list__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: resp(30);
+    @include _767 {
+      gap: resp(15, 360);
+    }
+  }
+  &-category-btn {
+    font-size: 1.6em;
+  }
+  &-list {
+    padding-left: resp(15);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: resp(20);
+    @include _767 {
+      padding-left: 0;
+      gap: resp(10, 360);
+    }
+  }
+  &-list__subcategory-btn {
+    font-size: 1.3em;
+  }
+  &-list__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: resp(20);
+    @include _767 {
+      gap: resp(10, 360);
+    }
+  }
+  &-list-nomination {
+    padding-left: resp(25);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: resp(20);
+    @include _767 {
+      padding-left: 0;
+      gap: resp(15, 360);
+    }
+  }
+  &-list-nomination__item {
+    display: flex;
+    align-items: center;
+    gap: resp(10);
+    @include _767 {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 0;
+      gap: resp(5, 360);
+    }
+  }
+  &-list-nomination__title {
+    background: linear-gradient(to right, #fdd69d, #edb261);
+    -webkit-background-clip: text;
+    color: transparent;
+    &::after {
+      content: '-';
+      @include _767 {
+        display: none;
+      }
+    }
+  }
+}

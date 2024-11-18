@@ -26,9 +26,31 @@
       transition: stroke .3s ease, transform .3s ease;
     }
   }
+  &:not(.front) {
+    & .header__top {
+      background-color: #110E32;
+      &::after {
+        display: none;
+      }
+    }
+  }
   &__top {
+    position: relative;
     background-color: transparent;
     transition: background-color .3s ease;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, .26);
+      @include _767 {
+        display: none;
+      }
+    }
     @include _767 {
       background-color: #000;
     }
@@ -160,16 +182,18 @@
     }
   }
   &__title {
+    pointer-events: none;
     position: relative;
     font-size: resp(128);
     font-family: "Vezla", sans-serif;
     // text-transform: uppercase;
     line-height: 1em;
-    z-index: 0;
+    z-index: 1;
     text-align: center;
     background: $primary;
     -webkit-background-clip: text; /* Обрезка фона по тексту */
     color: transparent;
+    text-shadow: 0 4px 4px rgba(237, 214, 157, .25);
     @include _767 {
       display: none;
     }

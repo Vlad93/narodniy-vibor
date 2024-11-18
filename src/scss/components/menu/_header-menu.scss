@@ -7,6 +7,9 @@
     align-items: center;
     column-gap: resp(5);
     justify-content: space-between;
+    & .menu__link::after {
+      display: none;
+    }
     @include _767 {
       justify-content: center;
       width: 100%;

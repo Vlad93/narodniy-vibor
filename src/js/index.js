@@ -1129,7 +1129,7 @@ $(document).ready(function () {
   var swiperMarque = new Swiper('.section-partners__swiper', {
     slidesPerView: 3,
     spaceBetween: 20,
-    speed: 4500,
+    speed: 5000,
     loop: true,
     allowTouchMove: false, // можно ещё отключить свайп
     autoplay: {
@@ -1140,6 +1140,81 @@ $(document).ready(function () {
       992: {
         slidesPerView: 4,
         spaceBetween: 50,
+      }
+    }
+  });
+
+
+  function calculateSpaceBetween() {
+    const marqueeContainer = document.querySelector('.section-categories__marquee');
+    if(marqueeContainer) {
+      const containerWidth = marqueeContainer.offsetWidth; // Получаем ширину контейнера
+
+      // Пример расчета spaceBetween (можете настроить по своему усмотрению)
+      const spaceBetween = Math.max(280, Math.round(containerWidth * 93 / 100)); // Минимум 100, иначе 1/10 ширины контейнера
+
+      return spaceBetween;
+    }
+  }
+  var swiperMarqueText = new Swiper('.section-categories__marquee', {
+    slidesPerView: 'auto',
+    spaceBetween: calculateSpaceBetween(),
+    speed: 13000,
+    loop: true,
+    allowTouchMove: false, // можно ещё отключить свайп
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false // или сделать так, чтобы восстанавливался autoplay после взаимодействия
+    },
+    on: {
+      resize: function(swiper) {
+        swiper.params.spaceBetween = calculateSpaceBetween();
+        swiper.update();
+      }
+    }
+  });
+
+  function calculateSpaceBetweenPoll() {
+    const marqueeContainer = document.querySelector('.poll-close__marquee');
+    if(marqueeContainer) {
+      const containerWidth = marqueeContainer.offsetWidth; // Получаем ширину контейнера
+      // Пример расчета spaceBetween (можете настроить по своему усмотрению)
+      const spaceBetween = Math.max(50, Math.round(containerWidth * 8.3 / 100));
+      return spaceBetween;
+    }
+  }
+  var swiperPollMarquee1 = new Swiper('.poll-close__marquee_top', {
+    slidesPerView: 'auto',
+    spaceBetween: calculateSpaceBetweenPoll(),
+    speed: 22000,
+    loop: true,
+    allowTouchMove: false, // можно ещё отключить свайп
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false // или сделать так, чтобы восстанавливался autoplay после взаимодействия
+    },
+    on: {
+      resize: function(swiper) {
+        swiper.params.spaceBetween = calculateSpaceBetweenPoll();
+        swiper.update();
+      }
+    }
+  });
+  var swiperPollMarquee2 = new Swiper('.poll-close__marquee_bottom', {
+    slidesPerView: 'auto',
+    spaceBetween: calculateSpaceBetweenPoll(),
+    speed: 35000,
+    loop: true,
+    initialSlide: 2,
+    allowTouchMove: false, // можно ещё отключить свайп
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false // или сделать так, чтобы восстанавливался autoplay после взаимодействия
+    },
+    on: {
+      resize: function(swiper) {
+        swiper.params.spaceBetween = calculateSpaceBetweenPoll();
+        swiper.update();
       }
     }
   });
@@ -1283,7 +1358,9 @@ $(document).ready(function () {
         }
     };
 
-
+    const namePattern = /^[a-zA-Zа-яА-Я\s]+$/; // Буквы и пробелы
+    const emailPattern = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/; // Email
+    const passwordPattern = /^[a-zA-Z0-9!@#$%^&*()_+]{6,}$/;
 
   $.validator.addMethod('pattern', function(value, element, pattern) {
     // Проверяем, является ли значение пустым (если поле не обязательно) или соответствует регулярному выражению
@@ -1297,20 +1374,81 @@ $(document).ready(function () {
             rules: {
               name: {
                   required: true,
-                  pattern: /^[a-zA-Zа-яА-Я\s]+$/, // Метод проверки букв и пробелов
+                  pattern: namePattern, // Метод проверки букв и пробелов
                   minlength: 2,
               },
               phone: {
                 required: true,
                 minlength: 7, // Метод проверки повторяющихся подряд символов
               },
-              email: {
-                  pattern: /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/, // Проверка корректности email
+              login: {
+                required: true, // Поле обязательно
+                minlength: 3,    // Минимальная длина 3 символа
+                maxlength: 20,   // Максимальная длина 20 символов
+                pattern: /^[a-zA-Z0-9_-]+$/ // Допустимые символы (буквы, цифры, точки, подчеркивания и дефисы)
               },
+              email: {
+                  pattern: emailPattern, // Проверка корректности email
+              },
+              password: {
+                required: true,
+                minlength: 6, // Минимальная длина пароля
+                pattern: passwordPattern // Пример паттерна для пароля
+              }
 
           },
-          errorPlacement: function (error, element) {},
+          messages: {
+            name: {
+              required: "Это поле обязательно для заполнения.",
+              minlength: "Минимальная длина имени составляет {0} символов.",
+              pattern: "Имя может содержать только буквы и пробелы."
+            },
+            phone: {
+                required: "Телефон является обязательным.",
+                minlength: "Минимальная длина телефона составляет {0} символов."
+            },
+            email: {
+                required: "Email является обязательным.",
+                pattern: "Введите корректный email адрес."
+            },
+            login: {
+                required: "Введите логин.",
+                minlength: "Минимальная длина имени пользователя составляет {0} символов.",
+                maxlength: "Максимальная длина имени пользователя составляет {0} символов.",
+                pattern: "Имя пользователя может содержать только буквы, цифры, подчеркивания и дефисы."
+            },
+            password: {
+                required: "Пароль является обязательным.",
+                minlength: "Минимальная длина пароля составляет {0} символов.",
+                pattern: "Пароль может содержать только буквы, цифры и специальные символы."
+            }
+          },
+          errorPlacement: function (error, element) {
+            error.insertBefore(element);
+        },
+        invalidHandler: function(event, validator) {
+        }
         });
+    });
+
+
+    // Обработка события input для запрещенных символов
+    $('input[name="name"]').on('input', function() {
+      this.value = this.value.replace(/[^a-zA-Zа-яА-Я\s]/g, '');
+    });
+    $('input[name="email"]').on('input', function() {
+        this.value = this.value.replace(/[^a-zA-Z0-9_.+-@]/g, ''); // Разрешаем только допустимые символы для email
+    });
+    $('input[name="password"]').on('input', function() {
+      this.value = this.value.replace(/[^a-zA-Z0-9!@#$%^&*()_+]/g, ''); // Разрешаем только допустимые символы для password
+  });
+
+     // Переключение видимости пароля
+     $('#togglePassword').on('click', function () {
+      const passwordInput = $('input[name="password"]');
+      const type = passwordInput.attr('type') === 'password' ? 'text' : 'password';
+      passwordInput.attr('type', type);
+      type === 'password' ? $(this).addClass('close') : $(this).removeClass('close');
     });
 
     $('[headerBtn_JS]').on('click', function () {
@@ -1499,37 +1637,6 @@ if (localStorage.getItem('downloadPopupState') === null) {
     localStorage.setItem('downloadPopupState', 'true')
 }
 
-var galleryThumbsSwiper = new Swiper('.product-popup__gallery-swiper-thumbs', {
-  // loop: true,
-  direction: 'vertical',
-  spaceBetween: 10,
-  slidesPerView: 4,
-  watchSlidesProgress: true,
-  scrollbar: {
-    el: ".swiper-scrollbar",
-    hide: false,
-    draggable: true,
-  },
-  breakpoints: {
-    767: {
-      direction: 'horizontal',
-    }
-  },
-  on: {
-    resize: function() {
-      this.update();
-    }
-  }
-});
-var gallerySwiper = new Swiper('.product-popup__gallery-swiper-large', {
-  // loop: true,
-  spaceBetween: 10,
-  thumbs: {
-    swiper: galleryThumbsSwiper,
-  },
-});
-
-
 var popupClose = function () {
     $('.popup.open').find('input').val('');
     $('.popup.open').find('textarea').val('');
@@ -1546,6 +1653,14 @@ var popupClose = function () {
     $('.popup.open').addClass('fade');
     $('.popup.open').removeClass('open');
 };
+
+function come(elem) {
+  var docViewTop = $(window).scrollTop(),
+      docViewBottom = docViewTop + $(window).height(),
+      elemTop = $(elem).offset().top,
+      elemBottom = elemTop + $(elem).height();
+  return elemBottom <= docViewBottom && elemTop >= docViewTop;
+}
 
 var popupOpen = function (e) {
     popupClose();
@@ -1571,10 +1686,8 @@ function fixedHeader() {
   var headerHeight = $('.header').innerHeight();
 	if ( height >= headerHeight) {
     jQuery('.header').addClass('fixed');
-    // $('body').css('padding-top', $('.header').innerHeight());
   } else {
     jQuery('.header').removeClass('fixed');
-    // $('body').css('padding-top', '0');
   }
 }
 
@@ -1601,9 +1714,10 @@ $(window).scroll(function () {
       $('[toTop_JS]').removeClass('visible');
   };
 
+
+
   $('[onScrollDisplay_JS]').each(function () {
       var el = $(this);
-
       if (come(el)) {
           el.addClass('visible');
       };
@@ -1622,10 +1736,51 @@ $('.header__search-close-btn').on('click', function(e) {
 });
 
 
+$('.winners-category-list__item.category button').on('click', function() {
+  $(this).siblings('ul').slideToggle();
+})
+
+
 // $('img').each( function(e) {
 //   $(this).addClass('lazy');
 // });
 // let lazyLoadInstance = new LazyLoad();
+
+
+// TIMER
+let pollDateStart = $('#poll-timer').data('date');
+if(pollDateStart) {
+  var countDownDate = new Date(pollDateStart).getTime();
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    var daysEl = $('#poll-timer').find('.section-poll__timer-days .number');
+    var hoursEl = $('#poll-timer').find('.section-poll__timer-hours .number');
+    var minutesEl = $('#poll-timer').find('.section-poll__timer-minutes .number');
+    var secondsEl = $('#poll-timer').find('.section-poll__timer-seconds .number');
+    daysEl.text(days);
+    hoursEl.text(hours);
+    minutesEl.text(minutes);
+    secondsEl.text(seconds);
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("poll-timer").innerHTML = "<div class='page-title title'>Голосование скоро начнется!</div>";
+    }
+  }, 1000);
+}
 
 
 

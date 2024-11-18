@@ -1,0 +1,113 @@
+.section-actions {
+  &__wrap {
+    padding-top: resp(50);
+    @include _767 {
+      padding-top: resp(20, 360);
+    }
+  }
+  &__title {
+    margin-bottom: resp(35);
+    font-weight: 400;
+    line-height: 1.3em;
+    font-size: resp(32);
+    background: linear-gradient(to right, #fdd69d, #edb261);
+    -webkit-background-clip: text;
+    color: transparent;
+    @include _767 {
+      margin-bottom: resp(13, 360);
+      font-size: resp(16, 360);
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: resp(50);
+    @include _767 {
+      grid-template-columns: 1fr;
+      gap: resp(20,360);
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+}
+
+.actions-card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('../img/actions-bg.webp') no-repeat center / cover;
+  transition: transform .3s ease;
+  @include interactive {
+    &:hover &__img {
+      transform: scale(0.97);
+    }
+    &:hover &__title {
+      color: #16130F;
+    }
+  }
+  &__content {
+    padding: resp(80) resp(25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @include _767 {
+      padding: resp(27, 360) resp(13, 360) resp(40, 360);
+      background: url('../img/actions-bg-content.webp') no-repeat center / cover;
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+  &__img-wrap {
+    position: relative;
+    width: 100%;
+    height: resp(573);
+    overflow: hidden;
+    @include _767 {
+      height: resp(290, 360);
+    }
+  }
+  &__img {
+    display: block;
+    position: absolute;
+    max-width: none;
+    left: -3%;
+    top: -3%;
+    width: 106%;
+    height: 106%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .3s ease;
+    @include _767 {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__title {
+    line-height: 1.4em;
+    font-weight: 400;
+    font-size: resp(48);
+    text-transform: uppercase;
+    transition: color .3s ease;
+    @include _767 {
+      font-size: resp(20, 360);
+      color: #16130F;
+    }
+  }
+  &__link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

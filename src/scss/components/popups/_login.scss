@@ -1,0 +1,39 @@
+.login-popup {
+  &__block {
+    max-width: resp(974);
+    @include _767 {
+      max-width: 90%;
+    }
+  }
+  & .popup__container {
+    @include _767 {
+      width: 92%;
+    }
+  }
+  &__content {
+    @include _767 {
+      width: 100%;
+    }
+  }
+  &__main {
+    padding: resp(156) resp(154) resp(50) resp(154);
+    @include _767 {
+      width: 100%;
+      padding: resp(60, 360) resp(16, 360) resp(34, 360) resp(16, 360);
+    }
+  }
+  &__form-title {
+    font-size: resp(48);
+    @include _767 {
+      font-size: resp(19, 360);
+    }
+  }
+  & .form-btn {
+    font-size: resp(32);
+    max-width: resp(662);
+    @include _767 {
+      font-size: resp(18, 360);
+      max-width: 100%;
+    }
+  }
+}

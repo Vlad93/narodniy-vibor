@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- plagins css  -->
+  <link rel="stylesheet" href="css/choices.min.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <!-- favicon  -->
+  <link rel="shortcut icon" href="img/logo.svg">
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- favicon  -->
+  <link rel="shortcut icon" href="img/favicon.svg">
+  <title>Народный выбор | Рейтинги</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__top">
+      <div class="container">
+        <div class="header__top-desk">
+          <a href="/" class="header__logo logo" aria-label="Логотип народный выбор">
+            <img class="logo__img" src="img/logo.svg" alt="Logo">
+          </a>
+          <div class="header__top-wrap">
+            <div class="header__top-login-search-wrap">
+              <form action="" class="header__search search-form">
+                <button type="button" class="header__search-open header__top-btn">
+                  <div class="header__search-open-icon">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.25 6C16.8359 6 19.3158 7.02723 21.1443 8.85571C22.9728 10.6842 24 13.1641 24 15.75C24 18.18 23.115 20.4 21.645 22.095L30.12 30.57L29.055 31.635L20.58 23.16C18.8179 24.6721 16.572 25.5024 14.25 25.5C11.6641 25.5 9.18419 24.4728 7.35571 22.6443C5.52723 20.8158 4.5 18.3359 4.5 15.75C4.5 13.1641 5.52723 10.6842 7.35571 8.85571C9.18419 7.02723 11.6641 6 14.25 6ZM14.25 7.5C12.062 7.5 9.96354 8.36919 8.41637 9.91637C6.86919 11.4635 6 13.562 6 15.75C6 17.938 6.86919 20.0365 8.41637 21.5836C9.96354 23.1308 12.062 24 14.25 24C15.3334 24 16.4062 23.7866 17.4071 23.372C18.4081 22.9574 19.3175 22.3497 20.0836 21.5836C20.8497 20.8175 21.4574 19.9081 21.872 18.9071C22.2866 17.9062 22.5 16.8334 22.5 15.75C22.5 14.6666 22.2866 13.5938 21.872 12.5929C21.4574 11.5919 20.8497 10.6825 20.0836 9.91637C19.3175 9.15029 18.4081 8.5426 17.4071 8.12799C16.4062 7.71339 15.3334 7.5 14.25 7.5Z" fill="white"/>
+                      </svg>
+                  </div>
+                  <span class="header__search-open-text">ПОИСК</span>
+                </button>
+                <div class="header__search-input-wrap">
+                  <input type="text" class="form-input" placeholder="Поиск..">
+                  <button type="button" class="header__search-close-btn">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M24.5006 1.49996C24.1412 1.14064 23.6538 0.938782 23.1455 0.938782C22.6373 0.938782 22.1499 1.14064 21.7905 1.49996L13.0006 10.2898L4.21079 1.49996C3.85137 1.14064 3.36394 0.938782 2.85571 0.938782C2.34748 0.938782 1.86006 1.14064 1.50063 1.49996C1.14131 1.85938 0.939453 2.34681 0.939453 2.85504C0.939453 3.36327 1.14131 3.85069 1.50063 4.21012L10.2905 13L1.50063 21.7898C1.14131 22.1492 0.939453 22.6366 0.939453 23.1449C0.939453 23.6531 1.14131 24.1405 1.50063 24.5C1.86006 24.8593 2.34748 25.0611 2.85571 25.0611C3.36394 25.0611 3.85137 24.8593 4.21079 24.5L13.0006 15.7101L21.7905 24.5C22.1499 24.8593 22.6373 25.0611 23.1455 25.0611C23.6538 25.0611 24.1412 24.8593 24.5006 24.5C24.8599 24.1405 25.0618 23.6531 25.0618 23.1449C25.0618 22.6366 24.8599 22.1492 24.5006 21.7898L15.7108 13L24.5006 4.21012C24.8599 3.85069 25.0618 3.36327 25.0618 2.85504C25.0618 2.34681 24.8599 1.85938 24.5006 1.49996Z" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+              <button class="header__login login-btn header__top-btn" popupOpen="login">
+                ВОЙТИ
+              </button>
+            </div>
+            <div class="header__title">
+              НАРОДНЫЙ ВЫбОР
+            </div>
+          </div>
+          <button class="header__mob-btn" headerBtn_JS>
+            <span class="header__mob-btn-line"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="header__bottom">
+      <div class="container">
+        <div class="header__bottom-wrap">
+          <nav class="header__nav">
+            <ul class="header-menu__list menu">
+              <li class="menu__item dropdown">
+                <a class="menu__link" href="">
+                  О ПРЕМИИ
+                </a>
+                <button type="button" class="menu__dropdown-btn" aria-label="Открыть подменю">
+                  <svg class="menu__dropdown-btn-icon"  width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.7501 0.749556H1.25006C1.11338 0.749984 0.979401 0.787681 0.862551 0.858589C0.745701 0.929497 0.650402 1.03093 0.586911 1.15197C0.52342 1.27301 0.494143 1.40908 0.502231 1.54552C0.510318 1.68196 0.555463 1.81361 0.632808 1.92631L7.38281 11.6763C7.66256 12.0806 8.33606 12.0806 8.61656 11.6763L15.3666 1.92631C15.4447 1.81385 15.4905 1.68213 15.499 1.54546C15.5076 1.40879 15.4785 1.2724 15.4149 1.1511C15.3514 1.0298 15.2558 0.92824 15.1386 0.857447C15.0214 0.786654 14.887 0.749339 14.7501 0.749556Z" fill="url(#paint0_linear_1822_9450)"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_1822_9450" x1="15.5005" y1="6.36452" x2="0.500915" y2="6.36452" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FDD69D"/>
+                    <stop offset="1" stop-color="#EDB261"/>
+                    </linearGradient>
+                    </defs>
+                  </svg>
+                </button>
+                <ul class="menu__submenu submenu">
+                  <li class="submenu__item">
+                    <a href="#" class="submenu__link">
+                      ИСТОРИЯ
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="#" class="submenu__link">
+                      УСЛОВИЯ УЧАСТИЯ
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="#" class="submenu__link">
+                      ПАКЕТЫ УСЛУГ
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="#" class="submenu__link">
+                      БЛАГОТВОРИТЕЛЬНОСТЬ
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="">
+                  ПОБЕДИТЕЛИ
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link active" href="">
+                  РЕЙТИНГИ
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="">
+                  НОВОСТИ
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="">
+                  ГОЛОСОВАНИЕ
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <button class="header__btn btn" popupOpen="order">
+            ПОДАТЬ ЗАЯВКУ
+          </button>
+          <div class="header__bottom-mob">
+            <div class="header__bottom-logo-wrap">
+              <img src="img/logo.svg" alt="" class="header__bottom-logo">
+            </div>
+            <ul class="messangers__list">
+              <li class="messangers__item">
+                <a href="" class="messangers__link" aria-label="Tiktok ссылка" target="_blank">
+                  <img class="messangers__link-icon" src="img/icons/grad-tik.svg" alt="">
+                </a>
+              </li>
+              <li class="messangers__item">
+                <a href="" class="messangers__link" aria-label="Instagram ссылка" target="_blank">
+                  <img class="messangers__link-icon" src="img/icons/grad-inst.svg" alt="">
+                </a>
+              </li>
+              <li class="messangers__item">
+                <a href="" class="messangers__link" aria-label="Youtube ссылка" target="_blank">
+                  <img class="messangers__link-icon" src="img/icons/grad-yout.svg" alt="">
+                </a>
+              </li>
+              <li class="messangers__item">
+                <a href="" class="messangers__link" aria-label="Facebook ссылка" target="_blank">
+                  <img class="messangers__link-icon" src="img/icons/grad-face.svg" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="section-breadcrumbs section">
+      <div class="container">
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Главная</a></li>
+          <li class="breadcrumbs__item active"><span class="breadcrumbs__active-item">РЕЙТИНГИ</span></li>
+        </ul>
+      </div>
+    </section>
+    <section class="section section-main section-main_rating">
+      <div class="container">
+        <div class="title-wrap">
+          <h1 class="page-title title">
+            РЕЙТИНГИ
+          </h1>
+        </div>
+        <div class="block-narrow">
+          <div class="block-narrow__img-wrap">
+            <img src="img/rait.webp" alt="" class="block-narrow__img">
+          </div>
+          <div class="block-narrow__content">
+            <p>
+              Международная Премия “Народный Выбор” проводит масштабное интернет-голосование в котором участвуют потребители Беларуси и стран-партнеров. Потребители голосуют в более чем 100 номинациях, охватывающих все сегменты рынка.
+            </p>
+            <p>
+              Голосование проводится в два этапа. В первом туре определяется пятерка Призеров. Во втором туре из числа Призеров определяется Победитель. Один голос потребителя равен одному баллу. Побеждает Призер, набравший большее количество баллов
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="block-wide block-black">
+        <div class="container">
+          <div class="block-wide__content">
+            <p>
+              Международная Премия “Народный Выбор” создана как максимально открытый и при этом высокоэффективный маркетинговый инструмент. В Премии отсутствует жюри и Победителей определяют исключительно Потребители в ходе прямого, непосредственного и открытого интернет-голосования. Счетная комиссия Организационного комитета Премии фиксирует результаты голосования по состоянию на указанную в календаре Премии дату и время.
+            </p>
+            <p>
+              Каждый участник голосования проходит верификацию, поэтому в каждой из номинаций можно проголосовать только один раз.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="cards-block">
+          <div class="cards-block__year">
+            2025
+          </div>
+          <div class="cards-block__title page-title">
+            РЕЙТИНГИ
+          </div>
+          <div class="cards-block__grid">
+            <article class="cards-block__grid-item card card-main-category" style="background-image: url('../img/cat1.webp');">
+              <div class="card__content">
+                <h2 class="card-main-category__title">
+                  ПРОДУКТЫ ПИТАНИЯ И НАПИТКИ
+                </h2>
+                <ul class="card-main-category__subcategory-list">
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="cards-block__grid-item card card-main-category" style="background-image: url('../img/cat2.webp');">
+              <div class="card__content">
+                <h2 class="card-main-category__title">
+                  ДОМ
+                </h2>
+                <ul class="card-main-category__subcategory-list">
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="cards-block__grid-item card card-main-category" style="background-image: url('../img/cat3.webp');">
+              <div class="card__content">
+                <h2 class="card-main-category__title">
+                  АВТО
+                </h2>
+                <ul class="card-main-category__subcategory-list">
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="cards-block__grid-item card card-main-category" style="background-image: url('../img/cat4.webp');">
+              <div class="card__content">
+                <h2 class="card-main-category__title">
+                  ЗДОРОВЬЕ
+                </h2>
+                <ul class="card-main-category__subcategory-list">
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="cards-block__grid-item card card-main-category" style="background-image: url('../img/cat5.webp');">
+              <div class="card__content">
+                <h2 class="card-main-category__title">
+                  ОТДЫХ И РАЗВЛЕЧЕНИЯ
+                </h2>
+                <ul class="card-main-category__subcategory-list">
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="cards-block__grid-item card card-main-category" style="background-image: url('../img/cat6.webp');">
+              <div class="card__content">
+                <h2 class="card-main-category__title">
+                  ОБРАЗОВАНИЕ И РАЗВИТИЕ
+                </h2>
+                <ul class="card-main-category__subcategory-list">
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                  <li class="card-main-category__subcategory-list-item">
+                    <a href="" class="card-main-category__subcategory-list-link">
+                      Категория
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__nav-wrap">
+        <nav class="footer-nav">
+          <ul class="footer-nav__list menu">
+            <li class="footer-nav__item menu__item dropdown">
+              <a class="footer-nav__link menu__link" href="">
+                О ПРЕМИИ
+              </a>
+              <button type="button" class="menu__dropdown-btn" aria-label="Открыть подменю">
+                <svg class="menu__dropdown-btn-icon"  width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.7501 0.749556H1.25006C1.11338 0.749984 0.979401 0.787681 0.862551 0.858589C0.745701 0.929497 0.650402 1.03093 0.586911 1.15197C0.52342 1.27301 0.494143 1.40908 0.502231 1.54552C0.510318 1.68196 0.555463 1.81361 0.632808 1.92631L7.38281 11.6763C7.66256 12.0806 8.33606 12.0806 8.61656 11.6763L15.3666 1.92631C15.4447 1.81385 15.4905 1.68213 15.499 1.54546C15.5076 1.40879 15.4785 1.2724 15.4149 1.1511C15.3514 1.0298 15.2558 0.92824 15.1386 0.857447C15.0214 0.786654 14.887 0.749339 14.7501 0.749556Z" fill="url(#paint0_linear_1822_9450)"/>
+                  <defs>
+                  <linearGradient id="paint0_linear_1822_9450" x1="15.5005" y1="6.36452" x2="0.500915" y2="6.36452" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FDD69D"/>
+                  <stop offset="1" stop-color="#EDB261"/>
+                  </linearGradient>
+                  </defs>
+                </svg>
+              </button>
+              <ul class="menu__submenu submenu">
+                <li class="submenu__item">
+                  <a href="#" class="submenu__link">
+                    ИСТОРИЯ
+                  </a>
+                </li>
+                <li class="submenu__item">
+                  <a href="#" class="submenu__link">
+                    УСЛОВИЯ УЧАСТИЯ
+                  </a>
+                </li>
+                <li class="submenu__item">
+                  <a href="#" class="submenu__link">
+                    ПАКЕТЫ УСЛУГ
+                  </a>
+                </li>
+                <li class="submenu__item">
+                  <a href="#" class="submenu__link">
+                    БЛАГОТВОРИТЕЛЬНОСТЬ
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="footer-nav__item menu__item">
+              <a class="footer-nav__link menu__link" href="">
+                ПОБЕДИТЕЛИ
+              </a>
+            </li>
+            <li class="footer-nav__item menu__item">
+              <a class="footer-nav__link menu__link" href="">
+                РЕЙТИНГИ
+              </a>
+            </li>
+            <li class="footer-nav__item menu__item">
+              <a class="footer-nav__link menu__link" href="">
+                АКЦИИ
+              </a>
+            </li>
+            <li class="footer-nav__item menu__item">
+              <a class="footer-nav__link menu__link" href="">
+                НОВОСТИ
+              </a>
+            </li>
+            <li class="footer-nav__item menu__item">
+              <a class="footer-nav__link menu__link" href="">
+                ГОЛОСОВАНИЕ
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button class="footer__btn btn" popupOpen="order">
+          ПОДАТЬ ЗАЯВКУ
+        </button>
+      </div>
+    </div>
+    <div class="container-wide container footer__content-container">
+      <div class="footer__content-wrap">
+        <div class="footer__logo-contacts">
+          <a href="/" class="footer__logo logo" aria-label="Логотип Народный выбор">
+            <img class="logo__img" src="img/logo.svg" alt="Logo">
+          </a>
+          <ul class="messangers__list">
+            <li class="messangers__item">
+              <a href="" class="messangers__link" aria-label="Tiktok ссылка" target="_blank">
+                <img class="messangers__link-icon" src="img/icons/tik.svg" alt="">
+              </a>
+            </li>
+            <li class="messangers__item">
+              <a href="" class="messangers__link" aria-label="Instagram ссылка" target="_blank">
+                <img class="messangers__link-icon" src="img/icons/inst.svg" alt="">
+              </a>
+            </li>
+            <li class="messangers__item">
+              <a href="" class="messangers__link" aria-label="Youtube ссылка" target="_blank">
+                <img class="messangers__link-icon" src="img/icons/yout.svg" alt="">
+              </a>
+            </li>
+            <li class="messangers__item">
+              <a href="" class="messangers__link" aria-label="Facebook ссылка" target="_blank">
+                <img class="messangers__link-icon" src="img/icons/face.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__main-info">
+          <p class="footer__about-organization">
+            Организатор ООО “Системный маркетинг”
+          </p>
+          <div class="footer__email-wrap">
+            <span class="footer__email-dop-text">
+              Организационный комитет:
+            </span>
+            <a href="mailto:narodnyvybor@gmail.com" class="footer__email">
+              narodnyvybor@gmail.com
+            </a>
+          </div>
+          <div class="footer__email-wrap">
+            <span class="footer__email-dop-text">
+              IT-отдел:
+            </span>
+            <a href="mailto:narodnyvybor@gmail.com" class="footer__email">
+              narodnyvybor@gmail.com
+            </a>
+          </div>
+          <div class="footer__email-wrap">
+            <span class="footer__email-dop-text">
+              Главный редактор:
+            </span>
+            <a href="mailto:narodnyvybor@gmail.com" class="footer__email">
+              narodnyvybor@gmail.com
+            </a>
+          </div>
+          <p class="footer__main-dop-text">
+            Telegram/Whatsapp/Viber:
+          </p>
+          <ul class="footer__phones">
+            <li class="footer__phones-item">
+              <a href="tel:+375296152611" class="footer__phones-link phone-link">
+                <span class="phone-link__text">+375 29 615-26-11</span>
+              </a>
+              <span class="footer__phones-item-text">
+                Номинанты
+              </span>
+            </li>
+            <li class="footer__phones-item">
+              <a href="tel:+375447776988" class="footer__phones-link phone-link">
+                <span class="phone-link__text">+375 44 777-69-88</span>
+              </a>
+              <span class="footer__phones-item-text">
+                Номинанты
+              </span>
+            </li>
+            <li class="footer__phones-item">
+              <a href="tel:+375296269855" class="footer__phones-link phone-link">
+                <span class="phone-link__text">+375 29 626-98-55</span>
+              </a>
+              <span class="footer__phones-item-text">
+                Номинанты
+              </span>
+            </li>
+            <li class="footer__phones-item">
+              <a href="tel:+375293830000" class="footer__phones-link phone-link">
+                <span class="phone-link__text">+375 29 383-00-00</span>
+              </a>
+              <span class="footer__phones-item-text">
+                Партнеры
+              </span>
+            </li>
+            <li class="footer__phones-item">
+              <a href="tel:+375297200270   " class="footer__phones-link phone-link">
+                <span class="phone-link__text">+375 29 720-02-70</span>
+              </a>
+              <span class="footer__phones-item-text">
+                Организация
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__bottom-copyrights">
+            © 2024 НАРОДНЫЙ ВЫБОР. Все права защищены
+          </div>
+          <ul class="footer-privacy__list">
+            <li class="footer-privacy__list-item">
+              <a href="" class="footer-privacy__list-link" target="_blank">
+                Положение о Премии
+              </a>
+            </li>
+            <li class="footer-privacy__list-item">
+              <a href="" class="footer-privacy__list-link" target="_blank">
+                Защита персональных данных
+              </a>
+            </li>
+            <li class="footer-privacy__list-item">
+              <a href="" class="footer-privacy__list-link" target="_blank">
+                Политика конфиденциальности
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="preloader">
+    <div class="preloader-icon"></div>
+  </div>
+
+  <button class="to-top btn" toTop_JS>
+    <svg class="to-top__icon" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.8723 0.323244L8.00001 7.02224L1.12776 0.323244C1.00498 0.203313 0.84015 0.136171 0.668513 0.136171C0.496876 0.136171 0.332048 0.203313 0.209263 0.323244C0.149811 0.381495 0.10258 0.451023 0.0703363 0.527756C0.0380925 0.60449 0.0214844 0.686886 0.0214844 0.770119C0.0214844 0.853352 0.0380925 0.935747 0.0703363 1.01248C0.10258 1.08921 0.149811 1.15874 0.209263 1.21699L7.52014 8.34499C7.64853 8.47014 7.82072 8.54018 8.00001 8.54018C8.1793 8.54018 8.3515 8.47014 8.47989 8.34499L15.7908 1.21837C15.8506 1.16007 15.8982 1.09038 15.9307 1.01339C15.9632 0.9364 15.9799 0.853683 15.9799 0.770119C15.9799 0.686555 15.9632 0.603837 15.9307 0.526849C15.8982 0.449861 15.8506 0.380163 15.7908 0.321868C15.668 0.201938 15.5032 0.134796 15.3315 0.134796C15.1599 0.134796 14.995 0.201938 14.8723 0.321868V0.323244Z"></path>
+    </svg>
+  </button>
+
+  <div class="popup login-popup fade" popupID="login">
+    <div class="popup__container">
+      <div class="popup__block login-popup__block">
+        <div class="login-popup__content popup__content">
+          <div class="login-popup__main popup__main">
+            <div class="login-popup__form-title popup__form-title">
+              ВОЙТИ<br>В&nbsp;ЛИЧНЫЙ КАБИНЕТ
+            </div>
+            <form action="#" method="POST" class="login-popup__form popup-form" formValidate_JS>
+              <input type="hidden" name="action" value="request">
+              <input type="hidden" name="form" value="Заявка на участие">
+              <div class="login-popup__form-container form-container">
+                <div class="input-wrap  required">
+                  <label for="login" class="form-label">
+                    <span class="input-form-label">
+                      Логин
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="login" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap  required">
+                  <label for="password" class="form-label">
+                    <span class="input-form-label">
+                      Пароль
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="password" name="password" class="form-input" required>
+                      <button type="button" id="togglePassword" class="close" style="cursor: pointer;">👁</button>
+                    </span>
+                  </label>
+                </div>
+                <button class="form-btn btn" agreementControlBtn_JS>
+                  <span>ВОЙТИ</span>
+                </button>
+              </div>
+            </form>
+            <div class="order-popup__logo-mes-wrap logo-messengers">
+              <div class="logo-messengers__logo-wrap">
+                <img src="img/logo.svg" alt="" class="logo-messengers__logo">
+              </div>
+              <ul class="messangers__list">
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Tiktok ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-tik.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Instagram ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-inst.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Youtube ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-yout.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Facebook ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-face.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button class="order-popup__return popup__return popup-register" popupOpen="verification">
+          Регистрация
+        </button>
+          <div class="order-popup__close popup__close" popupClose_JS>
+            <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.4997 20.1085L3.63047 0.239258L0.239258 3.63047L20.1085 23.4997L0.239258 43.3689L3.63047 46.7601L23.4997 26.8909L43.3689 46.7601L46.7601 43.3689L26.8909 23.4997L46.7601 3.63047L43.3689 0.239258L23.4997 20.1085Z" fill="url(#paint0_linear_1595_1478)"/>
+              <defs>
+              <linearGradient id="paint0_linear_1595_1478" x1="0.239258" y1="23.4997" x2="46.7601" y2="23.4997" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FDD69D"/>
+              <stop offset="1" stop-color="#EDB261"/>
+              </linearGradient>
+              </defs>
+            </svg>
+        </div>
+      </div>
+    </div>
+    <div class="popup__blur" popupClose_JS></div>
+  </div>
+  </div>
+
+
+  <div class="popup verification-popup fade" popupID="verification">
+    <div class="popup__container">
+      <div class="popup__block verification-popup__block">
+        <div class="verification-popup__content popup__content">
+          <div class="verification-popup__main popup__main">
+            <div class="verification-popup__form-title popup__form-title">
+              ВЕРИФИКАЦИЯ
+            </div>
+            <form action="#" method="POST" class="verification-popup__form popup-form" formValidate_JS>
+              <input type="hidden" name="action" value="request">
+              <input type="hidden" name="form" value="Заявка на участие">
+              <div class="verification-popup__form-container form-container">
+                <div class="input-wrap input-wrap_phone required">
+                  <label for="phone" class="form-label">
+                    <span class="input-form-label">
+                      Номер телефона
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="phone" class="form-input" required phoneMask_JS>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap input-wrap_email required">
+                  <label for="email" class="form-label">
+                    <span class="input-form-label">
+                      E-mail
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="email" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap required">
+                  <div class="form-label form-label_radio">
+                    <span class="input-form-label">
+                      Пол
+                    </span>
+                    <div class="radio-list">
+                      <label class="form-radio-label">
+                        <input type="radio" name="sex" value="M" class="form-input" required checked>
+                        <span class="form-radio__icon"></span>
+                        <span class="form-radio__text">M</span>
+                      </label>
+                      <label class="form-radio-label">
+                        <input type="radio" name="sex" value="W" class="form-input" required>
+                        <span class="form-radio__icon"></span>
+                        <span class="form-radio__text">Ж</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-wrap  required">
+                  <label for="age" class="form-label">
+                    <span class="input-form-label">
+                      Возраст
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="age" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap required">
+                  <label for="buisness" class="form-label">
+                    <span class="input-form-label">
+                      Сфера деятельности
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="buisness" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap required">
+                  <label for="dohod" class="form-label">
+                    <span class="input-form-label">
+                      Уровень дохода
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="dohod" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="order-popup__form-checkbox popup-form__checkbox form-checkbox">
+                  <div agreementControl_JS class="checked">
+                      <label for="agreement"></label>
+                      <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                  </div>
+                  <p>
+                    Даю согласие на использование моих персональных данных.
+                  </p>
+                </div>
+                <div class="order-popup__form-checkbox popup-form__checkbox checkbox form-checkbox">
+                  <label for="agreement_mail" class="checkbox-label">
+                    Даю согласие на получение информационных писем и сообщений.
+                    <input type="checkbox" name="agreement_mail" id="agreement_mail" class="checkbox__input" checked>
+                    <span class="checkbox__span"></span>
+                  </label>
+                </div>
+                <button class="form-btn btn" agreementControlBtn_JS>
+                  <span>ВЕРИФИЦИРОВАТЬ</span>
+                </button>
+              </div>
+            </form>
+            <div class="order-popup__logo-mes-wrap logo-messengers">
+              <div class="logo-messengers__logo-wrap">
+                <img src="img/logo.svg" alt="" class="logo-messengers__logo">
+              </div>
+              <ul class="messangers__list">
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Tiktok ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-tik.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Instagram ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-inst.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Youtube ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-yout.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Facebook ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-face.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button class="order-popup__return popup__return" popupClose>
+            ВЕРНУТЬСЯ
+          </button>
+          <div class="order-popup__close popup__close" popupClose_JS>
+            <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.4997 20.1085L3.63047 0.239258L0.239258 3.63047L20.1085 23.4997L0.239258 43.3689L3.63047 46.7601L23.4997 26.8909L43.3689 46.7601L46.7601 43.3689L26.8909 23.4997L46.7601 3.63047L43.3689 0.239258L23.4997 20.1085Z" fill="url(#paint0_linear_1595_1478)"/>
+              <defs>
+              <linearGradient id="paint0_linear_1595_1478" x1="0.239258" y1="23.4997" x2="46.7601" y2="23.4997" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FDD69D"/>
+              <stop offset="1" stop-color="#EDB261"/>
+              </linearGradient>
+              </defs>
+            </svg>
+        </div>
+      </div>
+    </div>
+    <div class="popup__blur" popupClose_JS></div>
+  </div>
+  </div>
+
+
+  <div class="popup order-popup fade" popupID="order">
+    <div class="popup__container">
+      <div class="popup__block order-popup__block">
+        <div class="order-popup__content popup__content">
+          <div class="order-popup__main popup__main">
+            <div class="order-popup__form-title popup__form-title">
+              ПОДАТЬ ЗАЯВКУ НА УЧАСТИЕ
+            </div>
+            <form action="#" method="POST" class="order-popup__form popup-form" formValidate_JS>
+              <input type="hidden" name="action" value="request">
+              <input type="hidden" name="form" value="Заявка на участие">
+              <div class="order-popup__form-container form-container">
+                <div class="input-wrap  required">
+                  <label for="name" class="form-label">
+                    <span class="input-form-label">
+                      Наименование организации
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="name" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap  required">
+                  <label for="unp" class="form-label">
+                    <span class="input-form-label">
+                      УНП
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="unp" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap  required">
+                  <label for="contact_name" class="form-label">
+                    <span class="input-form-label">
+                      Контактное лицо
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="contact_name" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap required">
+                  <label for="phone" class="form-label">
+                    <span class="input-form-label">
+                      Телефон
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="phone" class="form-input" required phoneMask_JS>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap required">
+                  <label for="email" class="form-label">
+                    <span class="input-form-label">
+                      E-mail
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="email" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap required">
+                  <label for="nomination" class="form-label">
+                    <span class="input-form-label">
+                      Номинация
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="nomination" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="order-popup__oferta-wrap">
+                  <a href="" target="_blank" class="order-popup__oferta">
+                    Публичный договор (оферта)
+                  </a>
+                </div>
+                <button class="form-btn btn" agreementControlBtn_JS>
+                  <span>ПОДАТЬ ЗАЯВКУ</span>
+                </button>
+                <div class="order-popup__form-checkbox popup-form__checkbox form-checkbox">
+                  <div agreementControl_JS class="checked">
+                      <label for="agreement"></label>
+                      <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                  </div>
+                  <p>
+                    Даю согласие на использование моих персональных данных.
+                  </p>
+                </div>
+                <div class="order-popup__form-checkbox popup-form__checkbox checkbox form-checkbox">
+                  <label class="checkbox-label">
+                    Даю согласие на получение информационных писем и сообщений.
+                    <input type="checkbox" name="agreement_mail" class="checkbox__input" checked>
+                    <span class="checkbox__span"></span>
+                  </label>
+                </div>
+              </div>
+            </form>
+            <div class="order-popup__logo-mes-wrap logo-messengers">
+              <div class="logo-messengers__logo-wrap">
+                <img src="img/logo.svg" alt="" class="logo-messengers__logo">
+              </div>
+              <ul class="messangers__list">
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Tiktok ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-tik.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Instagram ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-inst.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Youtube ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-yout.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Facebook ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-face.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button class="order-popup__return popup__return" popupClose_JS>
+            ВЕРНУТЬСЯ
+          </button>
+          <div class="order-popup__close popup__close" popupClose_JS>
+            <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.4997 20.1085L3.63047 0.239258L0.239258 3.63047L20.1085 23.4997L0.239258 43.3689L3.63047 46.7601L23.4997 26.8909L43.3689 46.7601L46.7601 43.3689L26.8909 23.4997L46.7601 3.63047L43.3689 0.239258L23.4997 20.1085Z" fill="url(#paint0_linear_1595_1478)"/>
+              <defs>
+              <linearGradient id="paint0_linear_1595_1478" x1="0.239258" y1="23.4997" x2="46.7601" y2="23.4997" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FDD69D"/>
+              <stop offset="1" stop-color="#EDB261"/>
+              </linearGradient>
+              </defs>
+            </svg>
+        </div>
+      </div>
+    </div>
+    <div class="popup__blur" popupClose_JS></div>
+  </div>
+  </div>
+
+  <div class="popup thanks-popup thanks-popup_order fade" popupID="thanks-popup-order">
+    <div class="popup__container">
+      <div class="popup__block thanks-popup__block">
+        <div class="thanks-popup__content popup__content">
+          <div class="thanks-popup__main popup__main">
+            <div class="thanks-popup__title popup__form-title">
+              СПАСИБО
+            </div>
+            <div class="thanks-popup__text popup__form-text">
+              Ваша заявка на участие отправлена и вскоре с вами свяжется менеджер для уточнения деталей
+            </div>
+            <a href="" class="form-btn btn">
+              <span>ВЕРНУТЬСЯ НА САЙТ</span>
+            </a>
+            <div class="order-popup__logo-mes-wrap logo-messengers">
+              <div class="logo-messengers__logo-wrap">
+                <img src="img/logo.svg" alt="" class="logo-messengers__logo">
+              </div>
+              <ul class="messangers__list">
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Tiktok ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-tik.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Instagram ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-inst.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Youtube ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-yout.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Facebook ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-face.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="order-popup__close popup__close" popupClose_JS>
+            <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.4997 20.1085L3.63047 0.239258L0.239258 3.63047L20.1085 23.4997L0.239258 43.3689L3.63047 46.7601L23.4997 26.8909L43.3689 46.7601L46.7601 43.3689L26.8909 23.4997L46.7601 3.63047L43.3689 0.239258L23.4997 20.1085Z" fill="url(#paint0_linear_1595_1478)"/>
+              <defs>
+              <linearGradient id="paint0_linear_1595_1478" x1="0.239258" y1="23.4997" x2="46.7601" y2="23.4997" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FDD69D"/>
+              <stop offset="1" stop-color="#EDB261"/>
+              </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+    <div class="popup__blur" popupClose_JS></div>
+  </div>
+  </div>
+
+
+  <script src="js/polyfill.min.js"></script>
+  <script src="js/lazyload.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js" integrity="sha512-d4KkQohk+HswGs6A1d6Gak6Bb9rMWtxjOa0IiY49Q3TeFd5xAzjWXDCBW9RS7m86FQ4RzM2BdHmdJnnKRYknxw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $('[phoneMask_JS]').mask('+375(99)999-99-99');
+
+    $('form').on('submit', function(e) {
+      e.preventDefault();
+      if ($(this).valid()) {
+        let formData = new FormData(this);
+        formData.append('url', document.location.href);
+        let btn = $(this).find('.form-btn');
+        $('.preloader').addClass('active');
+        $.ajax({
+          url: 'https://jsonplaceholder.typicode.com/posts',
+          data: formData,
+          processData: false,
+          contentType: false,
+          type: 'POST',
+          success: function (response) {
+            setTimeout (function(){
+              $('.preloader').removeClass('active');
+              popupOpen('thanks-popup');
+              setTimeout(function() {
+                if($('.thanks-popup').hasClass('open')) {
+                  popupClose();
+                }
+            }, 4000);
+            }, 1300);
+
+          },
+          error: function(xhr, status, error) {
+            $('.preloader').remove('active');
+            console.error('Ошибка при отправке формы:', status, error);
+            btn.find('span').text('Ошибка');
+            btn.text('Попробовать еще раз');
+          },
+        })
+      } else {
+        console.log('Форма не прошла валидацию.');
+      }
+  });
+  </script>
+</body>
+</html>

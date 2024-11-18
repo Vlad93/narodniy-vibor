@@ -17,7 +17,7 @@
   <title>Народный выбор</title>
 </head>
 <body class="front">
-  <header class="header">
+  <header class="header front">
     <div class="header__top">
       <div class="container">
         <div class="header__top-desk">
@@ -44,7 +44,7 @@
                   </button>
                 </div>
               </form>
-              <button class="header__login login-btn header__top-btn">
+              <button class="header__login login-btn header__top-btn" popupOpen="login">
                 ВОЙТИ
               </button>
             </div>
@@ -175,10 +175,19 @@
       </div>
     </section>
     <section class="section-categories section">
-      <div class="section-categories__marquee">
-        <p class="section-categories__marquee-text title section-title">
-          онлайн — ГОЛОСОВАНИЕ
-        </p>
+      <div class="section-categories__marquee swiper">
+        <div class="section-categories__marquee-wrapper swiper-wrapper">
+          <div class="swiper-slide">
+            <p class="section-categories__marquee-text title section-title">
+              онлайн — ГОЛОСОВАНИЕ
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <p class="section-categories__marquee-text title section-title">
+              онлайн — ГОЛОСОВАНИЕ
+            </p>
+          </div>
+        </div>
       </div>
       <div class="container container-full">
         <div class="section-categories__wrap">
@@ -245,7 +254,7 @@
     <section class="section-ceremony section">
       <div class="container">
         <div class="section-ceremony__wrap">
-          <h2 class="section-ceremony__title section-title">
+          <h2 class="section-ceremony__title section-title" onScrollDisplay_JS>
             ЦЕРЕМОНИЯ НАГРАЖДЕНИЯ
           </h2>
           <p class="section-ceremony__subtitle section-subtitle">
@@ -283,7 +292,7 @@
     </section>
     <section class="section-news section">
       <div class="container">
-        <h2 class="section-news__title section-title">
+        <h2 class="section-news__title section-title" onScrollDisplay_JS>
           новости
         </h2>
       </div>
@@ -415,7 +424,7 @@
     </section>
     <section class="section section-partners">
       <div class="container">
-        <div class="section-title title section-partners__title">
+        <div class="section-title title section-partners__title" onScrollDisplay_JS>
           ПАРТНЕРЫ ПРЕМИИ
         </div>
       </div>
@@ -426,7 +435,7 @@
               <img src="img/relax.webp" alt="Logo 1">
             </div>
             <div class="section-partners__swiper-slide swiper-slide">
-              <a href="https://target-group.by/"><img src="img/target.svg" alt="Logo 1"></a>
+              <a href="https://target-group.by/"><img src="img/target-black.svg" alt="Logo 1"></a>
             </div>
             <div class="section-partners__swiper-slide swiper-slide">
               <img src="img/mood.svg" alt="Logo 1">
@@ -655,6 +664,244 @@
     </svg>
   </button>
 
+  <div class="popup login-popup fade" popupID="login">
+    <div class="popup__container">
+      <div class="popup__block login-popup__block">
+        <div class="login-popup__content popup__content">
+          <div class="login-popup__main popup__main">
+            <div class="login-popup__form-title popup__form-title">
+              ВОЙТИ<br>В&nbsp;ЛИЧНЫЙ КАБИНЕТ
+            </div>
+            <form action="#" method="POST" class="login-popup__form popup-form" formValidate_JS>
+              <input type="hidden" name="action" value="request">
+              <input type="hidden" name="form" value="Заявка на участие">
+              <div class="login-popup__form-container form-container">
+                <div class="input-wrap  required">
+                  <label for="login" class="form-label">
+                    <span class="input-form-label">
+                      Логин
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="login" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap  required">
+                  <label for="password" class="form-label">
+                    <span class="input-form-label">
+                      Пароль
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="password" name="password" class="form-input" required>
+                      <button type="button" id="togglePassword" class="close" style="cursor: pointer;">👁</button>
+                    </span>
+                  </label>
+                </div>
+                <button class="form-btn btn" agreementControlBtn_JS>
+                  <span>ВОЙТИ</span>
+                </button>
+              </div>
+            </form>
+            <div class="order-popup__logo-mes-wrap logo-messengers">
+              <div class="logo-messengers__logo-wrap">
+                <img src="img/logo.svg" alt="" class="logo-messengers__logo">
+              </div>
+              <ul class="messangers__list">
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Tiktok ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-tik.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Instagram ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-inst.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Youtube ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-yout.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Facebook ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-face.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button class="order-popup__return popup__return popup-register" popupOpen="verification">
+          Регистрация
+        </button>
+          <div class="order-popup__close popup__close" popupClose_JS>
+            <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.4997 20.1085L3.63047 0.239258L0.239258 3.63047L20.1085 23.4997L0.239258 43.3689L3.63047 46.7601L23.4997 26.8909L43.3689 46.7601L46.7601 43.3689L26.8909 23.4997L46.7601 3.63047L43.3689 0.239258L23.4997 20.1085Z" fill="url(#paint0_linear_1595_1478)"/>
+              <defs>
+              <linearGradient id="paint0_linear_1595_1478" x1="0.239258" y1="23.4997" x2="46.7601" y2="23.4997" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FDD69D"/>
+              <stop offset="1" stop-color="#EDB261"/>
+              </linearGradient>
+              </defs>
+            </svg>
+        </div>
+      </div>
+    </div>
+    <div class="popup__blur" popupClose_JS></div>
+  </div>
+  </div>
+
+
+  <div class="popup verification-popup fade" popupID="verification">
+    <div class="popup__container">
+      <div class="popup__block verification-popup__block">
+        <div class="verification-popup__content popup__content">
+          <div class="verification-popup__main popup__main">
+            <div class="verification-popup__form-title popup__form-title">
+              ВЕРИФИКАЦИЯ
+            </div>
+            <form action="#" method="POST" class="verification-popup__form popup-form" formValidate_JS>
+              <input type="hidden" name="action" value="request">
+              <input type="hidden" name="form" value="Заявка на участие">
+              <div class="verification-popup__form-container form-container">
+                <div class="input-wrap input-wrap_phone required">
+                  <label for="phone" class="form-label">
+                    <span class="input-form-label">
+                      Номер телефона
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="phone" class="form-input" required phoneMask_JS>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap input-wrap_email required">
+                  <label for="email" class="form-label">
+                    <span class="input-form-label">
+                      E-mail
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="email" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap required">
+                  <div class="form-label form-label_radio">
+                    <span class="input-form-label">
+                      Пол
+                    </span>
+                    <div class="radio-list">
+                      <label class="form-radio-label">
+                        <input type="radio" name="sex" value="M" class="form-input" required checked>
+                        <span class="form-radio__icon"></span>
+                        <span class="form-radio__text">M</span>
+                      </label>
+                      <label class="form-radio-label">
+                        <input type="radio" name="sex" value="W" class="form-input" required>
+                        <span class="form-radio__icon"></span>
+                        <span class="form-radio__text">Ж</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-wrap  required">
+                  <label for="age" class="form-label">
+                    <span class="input-form-label">
+                      Возраст
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="age" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap required">
+                  <label for="buisness" class="form-label">
+                    <span class="input-form-label">
+                      Сфера деятельности
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="buisness" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="input-wrap required">
+                  <label for="dohod" class="form-label">
+                    <span class="input-form-label">
+                      Уровень дохода
+                    </span>
+                    <span class="input-border-wrap">
+                      <input type="text" name="dohod" class="form-input" required>
+                    </span>
+                  </label>
+                </div>
+                <div class="order-popup__form-checkbox popup-form__checkbox form-checkbox">
+                  <div agreementControl_JS class="checked">
+                      <label for="agreement"></label>
+                      <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                  </div>
+                  <p>
+                    Даю согласие на использование моих персональных данных.
+                  </p>
+                </div>
+                <div class="order-popup__form-checkbox popup-form__checkbox checkbox form-checkbox">
+                  <label for="agreement_mail" class="checkbox-label">
+                    Даю согласие на получение информационных писем и сообщений.
+                    <input type="checkbox" name="agreement_mail" id="agreement_mail" class="checkbox__input" checked>
+                    <span class="checkbox__span"></span>
+                  </label>
+                </div>
+                <button class="form-btn btn" agreementControlBtn_JS>
+                  <span>ВЕРИФИЦИРОВАТЬ</span>
+                </button>
+              </div>
+            </form>
+            <div class="order-popup__logo-mes-wrap logo-messengers">
+              <div class="logo-messengers__logo-wrap">
+                <img src="img/logo.svg" alt="" class="logo-messengers__logo">
+              </div>
+              <ul class="messangers__list">
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Tiktok ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-tik.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Instagram ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-inst.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Youtube ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-yout.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Facebook ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-face.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button class="order-popup__return popup__return" popupClose>
+            ВЕРНУТЬСЯ
+          </button>
+          <div class="order-popup__close popup__close" popupClose_JS>
+            <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.4997 20.1085L3.63047 0.239258L0.239258 3.63047L20.1085 23.4997L0.239258 43.3689L3.63047 46.7601L23.4997 26.8909L43.3689 46.7601L46.7601 43.3689L26.8909 23.4997L46.7601 3.63047L43.3689 0.239258L23.4997 20.1085Z" fill="url(#paint0_linear_1595_1478)"/>
+              <defs>
+              <linearGradient id="paint0_linear_1595_1478" x1="0.239258" y1="23.4997" x2="46.7601" y2="23.4997" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FDD69D"/>
+              <stop offset="1" stop-color="#EDB261"/>
+              </linearGradient>
+              </defs>
+            </svg>
+        </div>
+      </div>
+    </div>
+    <div class="popup__blur" popupClose_JS></div>
+  </div>
+  </div>
+
 
   <div class="popup order-popup fade" popupID="order">
     <div class="popup__container">
@@ -728,6 +975,11 @@
                     </span>
                   </label>
                 </div>
+                <div class="order-popup__oferta-wrap">
+                  <a href="" target="_blank" class="order-popup__oferta">
+                    Публичный договор (оферта)
+                  </a>
+                </div>
                 <button class="form-btn btn" agreementControlBtn_JS>
                   <span>ПОДАТЬ ЗАЯВКУ</span>
                 </button>
@@ -741,9 +993,9 @@
                   </p>
                 </div>
                 <div class="order-popup__form-checkbox popup-form__checkbox checkbox form-checkbox">
-                  <label for="agreement_mail" class="checkbox-label">
+                  <label class="checkbox-label">
                     Даю согласие на получение информационных писем и сообщений.
-                    <input type="checkbox" name="agreement_mail" id="agreement_mail" class="checkbox__input" checked>
+                    <input type="checkbox" name="agreement_mail" class="checkbox__input" checked>
                     <span class="checkbox__span"></span>
                   </label>
                 </div>
@@ -797,79 +1049,57 @@
   </div>
   </div>
 
-
-  <div class="popup zamer-popup fade" popupID="cooperation">
-    <div class="popup__container">
-      <div class="popup__block zamer-popup__block">
-        <div class="zamer-popup__content popup__content">
-          <div class="zamer-popup__img-wrap popup__img-wrap">
-            <img src="img/popup-img.webp" alt="" class="zamer-popup__img popup__img">
-          </div>
-          <div class="zamer-popup__main popup__main">
-            <div class="zamer-popup__form-title popup__form-title">
-              Заявка на сотрудничество
-            </div>
-            <p class="zamer-popup__form-text popup__form-text">
-              Укажите ваше имя и контактный телефон. В&nbsp;самое&nbsp;ближайшее время наш оператор Вам&nbsp;перезвонит.
-            </p>
-            <form action="#" method="POST" class="zamer-popup__form popup-form" formValidate_JS>
-              <input type="hidden" name="action" value="request">
-              <input type="hidden" name="form" value="Заявка на сотрудничество">
-              <div class="zamer-popup__form-container form-container">
-                <div class="input-wrap  required">
-                  <label for="name" class="form-label">
-                    <input type="text" name="name" class="form-input" required placeholder="Ваше имя">
-                  </label>
-                </div>
-                <div class="input-wrap required">
-                  <label for="phone" class="form-label">
-                    <input type="text" name="phone" class="form-input" phoneMask_JS required placeholder="Номер телефона">
-                  </label>
-                </div>
-                <button class="form-btn animated btn" agreementControlBtn_JS>
-                  <span>Отправить</span>
-                </button>
-                <div class="zamer-popup__form-checkbox popup-form__checkbox form-checkbox">
-                  <div agreementControl_JS class="checked">
-                      <label for="agreement"></label>
-                      <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
-                  </div>
-                  <p>
-                    Нажимая на кнопку «Отправить» вы принимаете условия <a href="" class="agreement-link" target="_blank">Публичной оферты</a>.
-                  </p>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="zamer-popup__close popup__close" popupClose_JS>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24.5006 1.49996C24.1412 1.14064 23.6538 0.938782 23.1455 0.938782C22.6373 0.938782 22.1499 1.14064 21.7905 1.49996L13.0006 10.2898L4.21079 1.49996C3.85137 1.14064 3.36394 0.938782 2.85571 0.938782C2.34748 0.938782 1.86006 1.14064 1.50063 1.49996C1.14131 1.85938 0.939453 2.34681 0.939453 2.85504C0.939453 3.36327 1.14131 3.85069 1.50063 4.21012L10.2905 13L1.50063 21.7898C1.14131 22.1492 0.939453 22.6366 0.939453 23.1449C0.939453 23.6531 1.14131 24.1405 1.50063 24.5C1.86006 24.8593 2.34748 25.0611 2.85571 25.0611C3.36394 25.0611 3.85137 24.8593 4.21079 24.5L13.0006 15.7101L21.7905 24.5C22.1499 24.8593 22.6373 25.0611 23.1455 25.0611C23.6538 25.0611 24.1412 24.8593 24.5006 24.5C24.8599 24.1405 25.0618 23.6531 25.0618 23.1449C25.0618 22.6366 24.8599 22.1492 24.5006 21.7898L15.7108 13L24.5006 4.21012C24.8599 3.85069 25.0618 3.36327 25.0618 2.85504C25.0618 2.34681 24.8599 1.85938 24.5006 1.49996Z" fill="#1C1718"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    <div class="popup__blur" popupClose_JS></div>
-  </div>
-  </div>
-
-  <div class="popup thanks-popup fade" popupID="thanks-popup">
+  <div class="popup thanks-popup thanks-popup_order fade" popupID="thanks-popup-order">
     <div class="popup__container">
       <div class="popup__block thanks-popup__block">
         <div class="thanks-popup__content popup__content">
-          <div class="thanks-popup__img-wrap popup__img-wrap">
-            <img src="img/popup-img.webp" alt="" class="thanks-popup__img popup__img">
-          </div>
           <div class="thanks-popup__main popup__main">
             <div class="thanks-popup__title popup__form-title">
-              СПАСИБО ЗА ЗАКАЗ!
+              СПАСИБО
             </div>
             <div class="thanks-popup__text popup__form-text">
-              Наши специалисты свяжутся с Вами в ближайшее время
+              Ваша заявка на участие отправлена и вскоре с вами свяжется менеджер для уточнения деталей
+            </div>
+            <a href="" class="form-btn btn">
+              <span>ВЕРНУТЬСЯ НА САЙТ</span>
+            </a>
+            <div class="order-popup__logo-mes-wrap logo-messengers">
+              <div class="logo-messengers__logo-wrap">
+                <img src="img/logo.svg" alt="" class="logo-messengers__logo">
+              </div>
+              <ul class="messangers__list">
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Tiktok ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-tik.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Instagram ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-inst.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Youtube ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-yout.svg" alt="">
+                  </a>
+                </li>
+                <li class="messangers__item">
+                  <a href="" class="messangers__link" aria-label="Facebook ссылка" target="_blank">
+                    <img class="messangers__link-icon" src="img/icons/grad-face.svg" alt="">
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="zamer-popup__close popup__close" popupClose_JS>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24.5006 1.49996C24.1412 1.14064 23.6538 0.938782 23.1455 0.938782C22.6373 0.938782 22.1499 1.14064 21.7905 1.49996L13.0006 10.2898L4.21079 1.49996C3.85137 1.14064 3.36394 0.938782 2.85571 0.938782C2.34748 0.938782 1.86006 1.14064 1.50063 1.49996C1.14131 1.85938 0.939453 2.34681 0.939453 2.85504C0.939453 3.36327 1.14131 3.85069 1.50063 4.21012L10.2905 13L1.50063 21.7898C1.14131 22.1492 0.939453 22.6366 0.939453 23.1449C0.939453 23.6531 1.14131 24.1405 1.50063 24.5C1.86006 24.8593 2.34748 25.0611 2.85571 25.0611C3.36394 25.0611 3.85137 24.8593 4.21079 24.5L13.0006 15.7101L21.7905 24.5C22.1499 24.8593 22.6373 25.0611 23.1455 25.0611C23.6538 25.0611 24.1412 24.8593 24.5006 24.5C24.8599 24.1405 25.0618 23.6531 25.0618 23.1449C25.0618 22.6366 24.8599 22.1492 24.5006 21.7898L15.7108 13L24.5006 4.21012C24.8599 3.85069 25.0618 3.36327 25.0618 2.85504C25.0618 2.34681 24.8599 1.85938 24.5006 1.49996Z" fill="#1C1718"/>
+          <div class="order-popup__close popup__close" popupClose_JS>
+            <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.4997 20.1085L3.63047 0.239258L0.239258 3.63047L20.1085 23.4997L0.239258 43.3689L3.63047 46.7601L23.4997 26.8909L43.3689 46.7601L46.7601 43.3689L26.8909 23.4997L46.7601 3.63047L43.3689 0.239258L23.4997 20.1085Z" fill="url(#paint0_linear_1595_1478)"/>
+              <defs>
+              <linearGradient id="paint0_linear_1595_1478" x1="0.239258" y1="23.4997" x2="46.7601" y2="23.4997" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FDD69D"/>
+              <stop offset="1" stop-color="#EDB261"/>
+              </linearGradient>
+              </defs>
             </svg>
           </div>
         </div>

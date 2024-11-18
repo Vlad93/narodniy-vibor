@@ -1,6 +1,41 @@
 .thanks-popup {
+  &__content {
+    max-width: resp(974);
+    @include _767 {
+      max-width: 100%;
+    }
+  }
+  &__main {
+    gap: resp(24);
+    @include _767 {
+      gap: resp(20, 360);
+    }
+  }
+  &__text {
+    @include font(Benzin, 500, sans-serif);
+    font-size: resp(36);
+    line-height: 1.3em;
+    background: linear-gradient(to right, #fdd69d, #edb261);
+    -webkit-background-clip: text;
+    color: transparent;
+    @include _767 {
+      font-size: resp(16, 360);
+    }
+  }
+  & .form-btn {
+    max-width: max-content;
+    padding: resp(21) resp(64);
+    font-size: resp(32);
+    @include _767 {
+      padding: resp(12, 360) resp(20, 360);
+      font-size: resp(20, 360);
+      max-width: 100%;
+    }
+  }
   &__title {
-    text-transform: uppercase;
-    font-weight: 400;
+    font-size: resp(96);
+    @include _767 {
+      font-size: resp(24, 360);
+    }
   }
 }

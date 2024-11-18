@@ -1,0 +1,60 @@
+.section-action {
+  padding-bottom: resp(250);
+  @include _767 {
+    padding-bottom: resp(100 ,360);
+  }
+  &__content {
+    margin-top: resp(100);
+    background: url('../img/action-bg.webp') no-repeat center / cover;
+    display: flex;
+    @include _767 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &__content-wrap {
+    flex: 1;
+    padding: resp(49) resp(60);
+    @include _767 {
+      flex: none;
+      width: 100%;
+      padding: resp(27, 360) resp(13, 360)
+    }
+  }
+  &__img-wrap {
+    position: relative;
+    width: 40%;
+    height: resp(573);
+    @include _767 {
+      width: 100%;
+      height: resp(290, 360);
+    }
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__title {
+    margin-bottom: resp(30);
+    line-height: 1.4em;
+    font-weight: 400;
+    font-size: resp(48);
+    text-transform: uppercase;
+    color: #16130F;
+    transition: color .3s ease;
+    @include _767 {
+      margin-bottom: resp(20, 360);
+      font-size: resp(20, 360);
+    }
+  }
+  &__editor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #16130F;
+  }
+}

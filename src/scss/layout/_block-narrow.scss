@@ -1,0 +1,40 @@
+.block-narrow {
+  padding-bottom: resp(25);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: resp(50);
+  max-width: 55%;
+  @include _767 {
+    padding-bottom: resp(30, 360);
+    gap: resp(20, 360);
+    max-width: 100%;
+  }
+  &__content p {
+    line-height: 1.3em;
+    &:not(:last-child) {
+      margin-bottom: resp(29);
+      @include _767 {
+        margin-bottom: resp(20, 360);
+      }
+    }
+  }
+  &__img-wrap {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    min-height: resp(450);
+    max-height: resp(585);
+    object-fit: cover;
+    object-position: center top;
+    @include _767 {
+      min-height: resp(218, 360);
+      max-height: none;
+    }
+  }
+}

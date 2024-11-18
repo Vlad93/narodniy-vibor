@@ -142,6 +142,11 @@
       position: static;
       font-size: resp(24);
       font-weight: 500;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
       background: $primary;
       -webkit-background-clip: text; /* Обрезка фона по тексту */
       color: transparent;

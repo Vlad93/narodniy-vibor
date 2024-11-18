@@ -20,7 +20,7 @@
 @import "components/menu/submenu";
 // @import "components/project-card";
 // @import "components/slider";
-// @import "components/product-card";
+@import "components/card";
 // @import "components/service-card";
 @import "components/forms/select";
 // @import "components/forms/form-bg";
@@ -28,7 +28,7 @@
 // @import "components/agreement";
 // @import "components/team-card";
 // @import "components/video-item";
-// @import "components/new-card";
+@import "components/news-card";
 // @import "components/load-more";
 // @import "components/article-card";
 // @import "components/soc-media";
@@ -37,10 +37,11 @@
 @import "components/popups/popup";
 // @import "components/popups/product-popup";
 // @import "components/popups/after-sixty";
-// @import "components/popups/exit";
-// @import "components/popups/cp";
-// @import "components/popups/discuss";
+
+@import "components/titles";
 @import "components/popups/popup-form";
+@import "components/popups/login";
+@import "components/popups/verification";
 @import "components/popups/order";
 @import "components/popups/thanks";
 @import "components/preloader";
@@ -50,10 +51,16 @@
 @import "layout/section";
 @import "layout/swiper-section";
 @import "layout/partners";
-@import "layout/zamer";
+@import "layout/block-narrow";
+@import "layout/block-wide";
+@import "layout/cards-block";
 @import "layout/map";
 @import "layout/main-editor";
 @import "layout/gallery-swiper";
+@import "layout/list-blocks";
+@import "layout/section-help";
+@import "layout/news";
+
 
 @import "pages/home/hero";
 @import "pages/home/categories";
@@ -74,8 +81,15 @@
 // @import "pages/home/commercial-offer";
 // @import "pages/home/about";
 
+@import "pages/winners/winners";
+
+@import "pages/actions/actions";
+
+@import "pages/action/action";
 
 @import "pages/about/about";
+
+@import "pages/poll";
 
 @import "pages/catalog/catalog";
 

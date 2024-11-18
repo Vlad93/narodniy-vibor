@@ -399,4 +399,9 @@
       left: 160%
   }
 }
+@keyframes rotateAnimation {
+	0% {transform: rotateY(0deg);}
+  50% {transform: rotateY(30deg) rotate(-5deg) translateZ(resp(-4));}
+  100% {transform: rotateY(0deg);}
+}
 

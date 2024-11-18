@@ -6,7 +6,7 @@
     // align-items: flex-start;
     gap: resp(55);
     font-size: resp(24);
-    line-height: 1.21em;
+    line-height: 1.3em;
     letter-spacing: 0.05em;
     &:only-child {
       margin-bottom: 0;
@@ -37,7 +37,7 @@
 }
 .editor {
   font-size: resp(24);
-  line-height: 1.21em;
+  line-height: 1.3em;
   letter-spacing: 0.05em;
   @include _767 {
     font-size: resp(14, 360);

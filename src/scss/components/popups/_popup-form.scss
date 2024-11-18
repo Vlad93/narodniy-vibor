@@ -1,5 +1,6 @@
 .popup-form {
-  max-width: 58%;
+  width: 100%;
+  max-width: resp(704);
   @include _767 {
     width: 100%;
     max-width: 100%;
@@ -64,7 +65,8 @@
     line-height: 1.3em;
     background-color: transparent;
     letter-spacing: 0.04em;
-    color: #fff;
+    @include font(Benzin, 400, sans-serif);
+    color: #fdd69d;
     background-color: #110e32;
     z-index: 1;
     font-size: resp(24);
@@ -98,6 +100,41 @@
     margin-top: resp(22);
     @include _767 {
       margin-top: resp(9, 360);
+    }
+  }
+}
+
+#togglePassword {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+  right: resp(20);
+  border: none;
+  outline: none;
+  color: #fff;
+  line-height: 1em;
+  font-size: resp(32);
+  @include _767 {
+    top: 20%;
+    right: resp(10, 360);
+    font-size: resp(20, 360);
+  }
+  &.close {
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: resp(2);
+      left: 10%;
+      bottom: 0;
+      transform-origin: 0 0;
+      transform: rotate(-45deg);
+      background-color: #fff;
+      @include _767 {
+        height: resp(2, 360);
+      }
     }
   }
 }

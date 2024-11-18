@@ -1,0 +1,107 @@
+.news-card {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  min-height: resp(740);
+  padding: resp(30);
+  border: resp(2) solid transparent;
+  transition: border-color .3s ease;
+  @include _767 {
+    min-height: resp(480, 360);
+    padding: resp(20, 360) resp(13, 360);
+    border: resp(2, 360) solid transparent;
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .49);
+    opacity: 1;
+    transition: opacity .3s ease;
+  }
+  @include interactive {
+    &:hover {
+      border-color: #FDD69D;
+    }
+    &:hover::after {
+      opacity: .5;
+    }
+    &:hover &__img {
+      transform: scale(0.97);
+    }
+    &:hover &__title {
+      text-shadow: 0px 3px 6px #FDD69D;
+    }
+  }
+  &__img-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+  }
+  &__img {
+    position: absolute;
+    left: -3%;
+    top: -3%;
+    max-width: none;
+    width: 106%;
+    height: 106%;
+    object-position: top center;
+    object-fit: cover;
+    transition: transform .4s ease;
+  }
+  &__content {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  &__title {
+    position: relative;
+    padding-bottom: resp(38);
+    display: block;
+    font-weight: 400;
+    line-height: 1.35em;
+    transition: text-shadow .3s ease;
+    @include _767 {
+      padding-bottom: resp(25, 360);
+    }
+    &::after {
+      content: '';
+      display: block;
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+      height: resp(3);
+      background: linear-gradient(to right, #fdd69d, #edb261);
+      @include _767 {
+        height: resp(3, 360);
+      }
+    }
+  }
+  &__date {
+    padding-top: resp(20);
+    font-size: resp(16);
+    @include _767 {
+      padding-top: resp(15, 360);
+      font-size: resp(12, 360);
+    }
+  }
+  &__link {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

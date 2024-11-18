@@ -140,6 +140,14 @@
       right: 0;
       top: 0;
       background: $primary;
+      @include _767 {
+        width: resp(1, 360);
+      }
+    }
+    &-item:last-child &-link {
+      @include _767 {
+        padding-right: 0;
+      }
     }
     &-link {
       position: relative;
@@ -154,6 +162,7 @@
       text-decoration-color: #fdd69d;
       transition: text-shadow .3s ease;
       @include _767 {
+        padding-right: resp(8, 360);
         line-height: 1.3em;
         font-size: resp(10, 360);
       }
